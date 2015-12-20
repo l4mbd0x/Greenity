@@ -333,8 +333,9 @@ globalkeys = awful.util.table.join(
     --Treesome
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
-    --Printscreen(Not ideal yet)
-    awful.key({}, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
+    --Printscreen using scrot
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end), 
+
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
 
@@ -415,7 +416,7 @@ for i = 1, 9 do
                           end
                       end
                   end))
-e/nd
+end
 
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
