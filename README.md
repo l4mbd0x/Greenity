@@ -5,7 +5,7 @@ The config requires:
 
 -vicious
 -treesome
--xfce (planned to be removed **)
+-scrot (Screenshot for X)
 -xscreensaver
 -urxvt (rxvt-unicode)
 
@@ -14,7 +14,7 @@ Has:
 -Simple cpu graph widget
 -Simple mem widget
 -Default date widget
--Prtsc screenshot working (** uses its xfce-printscreen)
+-Prtsc screenshot to ~/screenshots
 -Treesome layout
 -Xscreensaver controlling locking and its keybinded activation.
 Obs: clone and copy the awesome directory directly to your ~/.config/awesome 
