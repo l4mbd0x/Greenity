@@ -13,6 +13,7 @@ Has:
 
 -Simple cpu graph widget
 -Simple mem widget
+-Simple download/upload net widget
 -Default date widget
 -Prtsc screenshot to ~/screenshots
 -Treesome layout

@@ -14,7 +14,6 @@ local menubar = require("menubar")
 local vicious = require("vicious")
 local treesome = require("treesome")
 
--- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -47,13 +46,6 @@ beautiful.init("/home/lambdox/.config/awesome/themes/zenburn/theme.lua")
 terminal = "urxvt" 
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
-
-
-
-
-
-
-
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -146,34 +138,29 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
+---- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
---Create a textmemory widget
+----Create a textmemory widget
 --Initialize widget
 memwidget = wibox.widget.textbox()
 -- Register widget
 vicious.register(memwidget, vicious.widgets.mem, "|$1% $2MB/$3MB|", 13)-- Create a progressbar memwidget
 
---Create a graphcpu widget
+----Create a graphcpu widget
 -- Initialize widget
 cpuwidget = awful.widget.graph()
 -- Graph properties
 cpuwidget:set_width(50)
 cpuwidget:set_background_color("#000000")
-cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#088A08"}, 
-                    {1, "#31B404" }}})
+cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#088A08"}, {1, "#31B404" }}})
 -- Register widget
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
-
-
-
-
-
-
-
-
+----Create a Network Widget
+netwidget = wibox.widget.textbox()
+-- Register widget
+vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${enp2s0 down_kb}</span> <span color="#088A08">${enp2s0 up_kb}⇧</span> ', 1)
 
 
 
@@ -258,10 +245,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    --right_layout:add(volumeicon)
-    --right_layout:add(volume)
     right_layout:add(cpuwidget)
     right_layout:add(memwidget)
+    right_layout:add(netwidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -299,7 +285,6 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -338,6 +323,7 @@ globalkeys = awful.util.table.join(
 
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
+    
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
