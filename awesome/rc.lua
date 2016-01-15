@@ -138,16 +138,16 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
----- Create a textclock widget
+---- Create a Textclock Widget
 mytextclock = awful.widget.textclock()
 
-----Create a textmemory widget
+----Create a textmemory Widget
 --Initialize widget
 memwidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "|$1% $2MB/$3MB|", 13)-- Create a progressbar memwidget
+vicious.register(memwidget, vicious.widgets.mem, "|$1% $2MB/$3MB|", 10)-- Create a progressbar memwidget
 
-----Create a graphcpu widget
+----Create a Graphcpu Widget
 -- Initialize widget
 cpuwidget = awful.widget.graph()
 -- Graph properties
@@ -161,6 +161,9 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 netwidget = wibox.widget.textbox()
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${enp2s0 down_kb}</span> <span color="#088A08">${enp2s0 up_kb}⇧</span> ', 1)
+
+
+
 
 
 
