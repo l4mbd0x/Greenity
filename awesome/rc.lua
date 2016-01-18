@@ -40,7 +40,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/lambdox/.config/awesome/themes/zenburn/theme.lua")
+beautiful.init("~/.config/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt" 
@@ -425,7 +425,7 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
-		     size_hints_honor = false,
+                     size_hints_honor = false,
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
@@ -479,7 +479,7 @@ client.connect_signal("manage", function (c, startup)
                     client.focus = c
                     c:raise()
                     awful.mouse.client.resize(c)
-                end)
+               end)
                 )
 
         -- Widgets that are aligned to the left
