@@ -160,7 +160,7 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 ----Create a Network Widget
 netwidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${enp2s0 down_kb}</span> <span color="#088A08">${enp2s0 up_kb}⇧</span> ', 1)
+vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span> ', 1)
 
 
 
