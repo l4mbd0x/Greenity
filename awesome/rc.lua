@@ -101,19 +101,9 @@ myawesomemenu = {
 
 webstuff = {
 	{ "Firefox", "firefox" },
-	{ "Chrome", "google-chrome" },
 	{ "Thunderbird", "thunderbird"},
-	--{ "Irssi", terminal .. "irssi"},
 }
---devstuff = {
---	{ "Office", "libreoffice" },
---	{ "KdenLive", "kdenlive" },
---	{ "Coms" , "mumble" },
---        { "Weechat" , terminal .. " -e weechat" },
---}
---gamestuff = {
---	{ "Steam", "steam" },
---}
+
 devstuff = {
 	{ "Libreoffice", "libreoffice"},
 	{ "Gimp", "gimp"},
@@ -124,9 +114,6 @@ devstuff = {
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
 				    { "Webstuff", webstuff },
 				    { "Devstuff", devstuff },
-			            --{ "Dev", devstuff },
-				    --{ "Game", gamestuff },
-				    --{ "Utils", utilstuff },
 				  }
 			})
           
