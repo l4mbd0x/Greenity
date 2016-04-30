@@ -86,7 +86,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "main", "msg", "music", "movie", "search", "edit", "game"}, s, layouts[1])
+    tags[s] = awful.tag({ "compile", "msg", "music", "movie", "search", "edit", "main"}, s, layouts[1])
 end
 -- }}}
 
@@ -309,7 +309,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
     --Printscreen using scrot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end), 
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end), 
 
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
