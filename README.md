@@ -15,6 +15,7 @@ Has:
 -Simple mem widget  
 -Simple cpu graph widget  
 -Default awesome date widget  
+-Simple weather widget  
 -Simple download/upload net widget  
 -Prtsc screenshots to ~/Screenshots  
 -Xscreensaver controlling locking and its keybinded activation    

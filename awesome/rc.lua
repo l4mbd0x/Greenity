@@ -43,7 +43,7 @@ end
 beautiful.init("~/.config/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt" 
+terminal = "urxvtc"--requires urxvt-unicode in daemon mode by setting urxvtd --quiet --opendisplay fork in .xinitrc
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -149,6 +149,22 @@ netwidget = wibox.widget.textbox()
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span> ', 1)
 
+----Create a Weather Widget
+weatherwidget = wibox.widget.textbox()
+weather_t = awful.tooltip({ objects = { weatherwidget },})
+-- Register Widget
+vicious.register(weatherwidget, vicious.widgets.weather, 
+	function (widget, args) weather_t:set_text("City: " .. args["{city}"] ..
+												"\nWind: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. 
+												"\nSky: " .. args["{sky}"] .. 
+												"\nHumidity: " .. args["{humid}"] .. "%")
+      										  return " Weather: " .. args["{tempc}"] .. "C | " end, 300, "SBJV")
+      --'300': check every 5 minutes.
+      --'SBJV': the Joinville, Brazil's ICAO code.
+
+
+
+
 
 
 
@@ -237,6 +253,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(cpuwidget)
     right_layout:add(memwidget)
+	right_layout:add(weatherwidget)
     right_layout:add(netwidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
