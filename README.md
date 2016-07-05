@@ -2,17 +2,17 @@
 _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 
 |  Dependencies required   |
-----------------------------
-- gears                    |
-- vicious                  |
-- treesome                 |
-- beautiful                |
-- xscreensaver             |
-- urxvt (rxvt-unicode)     |
-- scrot (Screenshot for X) |
+:---:
+- gears                    
+- vicious                  
+- treesome                 
+- beautiful                
+- xscreensaver             
+- urxvt (rxvt-unicode)     
+- scrot (Screenshot for X) 
 
 |         Features            |
--------------------------------
+|:---:|
 - Treesome layout              
 - Mem scalar widget            
 - CPU graph widget            
