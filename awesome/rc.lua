@@ -44,7 +44,7 @@ beautiful.init("~/.config/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"--requires urxvt-unicode in daemon mode by setting urxvtd --quiet --opendisplay fork in .xinitrc
-editor = os.getenv("EDITOR") or "vim"
+editor =  "vim" or os.getenv("EDITOR")
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -86,7 +86,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "compile", "msg", "music", "movie", "search", "edit", "main"}, s, layouts[1])
+    tags[s] = awful.tag({ "edit 1", "edit 2", "edit 3", "search", "msg", "IRC", "music/movie", "compile"}, s, layouts[1])
 end
 -- }}}
 
@@ -101,6 +101,7 @@ myawesomemenu = {
 
 webstuff = {
 	{ "Firefox", "firefox" },
+	{ "Chrome", "google-chrome-stable"},
 	{ "Thunderbird", "thunderbird"},
 }
 
@@ -112,8 +113,9 @@ devstuff = {
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-				    { "Webstuff", webstuff },
-				    { "Devstuff", devstuff },
+				    			    { "Webstuff", webstuff },
+				    				{ "Devstuff", devstuff },
+									{ "Open urxvt", "urxvtc"},
 				  }
 			})
           
