@@ -112,10 +112,10 @@ devstuff = {
 	{ "Inkscape", "inkscape"}
 }
 
+
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
 				    			    { "Webstuff", webstuff },
-				    				{ "Devstuff", devstuff },
-									{ "Open urxvt", "urxvtc"},
+				    				{ "Devstuff", devstuff }
 				  }
 			})
           
@@ -327,8 +327,8 @@ globalkeys = awful.util.table.join(
     --Treesome
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
-    --Printscreen using scrot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end), 
+    --Scrot printscreen of selected area
+    awful.key({ }, "Print", function () awful.util.spawn_with_shell("sleep 0.5 && scrot -s -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
