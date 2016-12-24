@@ -15,15 +15,16 @@ _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 - Mem scalar widget            
 - CPU graph widget            
 - Default awesome date widget  
-- Weather widget               
+- Uptime widget              
 - Download/Upload net widged   
 - Prtsc keybind¹               
-- Xscreensaver²                
+- Xscreensaver² lock    
 
 _¹screenshots to ~/Screenshots_  
 _²controlling locking and its keybinded activation_    
-Obs1: treesome tiling layout bundled.  
-Obs2: clone and copy awesome directory directly to your ~/.config/awesome  
+
+## Install
+Clone and copy awesome directory directly to your ~/.config/awesome  
 
 ##Note for Funtoo/Gentoo users:  
 Emerge
