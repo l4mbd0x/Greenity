@@ -135,7 +135,7 @@ mytextclock = awful.widget.textclock()
 
 -- Create a text memory widget
 memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem, '|$1% $2MBs/$2MBs |', 10)
+vicious.register(memwidget, vicious.widgets.mem, ' $1% $2MBs/$3MBs', 1)
 
 -- Create a cpu graph widget
 cpuwidget = awful.widget.graph()
@@ -148,12 +148,12 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 uptimewidget = wibox.widget.textbox()
 uptimewidget_t = awful.tooltip({ objects = {uptimewidget}, })
 vicious.register(uptimewidget, vicious.widgets.uptime, function (widget, args) 
-uptimewidget_t:set_text('|'..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins|') 
-return string.format(' Uptime: ' ..args[1].. ' days |') end, 61)
+uptimewidget_t:set_text(' '..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins') 
+return string.format(' Uptime: ' ..args[1].. ' days') end, 61)
 
 -- Create a network widget
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, ' <span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span> |', 1)
+vicious.register(netwidget, vicious.widgets.net, ' <span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span>', 1)
 
 
 -- Create a wibox for each screen and add it
