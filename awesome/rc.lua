@@ -127,51 +127,33 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
----- Create a Textclock Widget
+
+-- == Widgets ==
+
+-- Create a Textclock Widget
 mytextclock = awful.widget.textclock()
 
-----Create a textmemory Widget
---Initialize widget
+-- Create a text memory widget
 memwidget = wibox.widget.textbox()
--- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "|$1% $2MB/$3MB|", 10)-- Create a progressbar memwidget
+vicious.register(memwidget, vicious.widgets.mem, '|$1% $2MBs/$2MBs |', 10)
 
-----Create a Graphcpu Widget
--- Initialize widget
+-- Create a cpu graph widget
 cpuwidget = awful.widget.graph()
--- Graph properties
 cpuwidget:set_width(50)
 cpuwidget:set_background_color("#000000")
 cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#088A08"}, {1, "#31B404" }}})
--- Register widget
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
-----Create a Network Widget
+-- Create a uptime widget
+uptimewidget = wibox.widget.textbox()
+uptimewidget_t = awful.tooltip({ objects = {uptimewidget}, })
+vicious.register(uptimewidget, vicious.widgets.uptime, function (widget, args) 
+uptimewidget_t:set_text('|'..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins|') 
+return string.format(' Uptime: ' ..args[1].. ' days |') end, 61)
+
+-- Create a network widget
 netwidget = wibox.widget.textbox()
--- Register widget
-vicious.register(netwidget, vicious.widgets.net, '<span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span> ', 1)
-
-----Create a Weather Widget
-weatherwidget = wibox.widget.textbox()
-weather_t = awful.tooltip({ objects = { weatherwidget },})
--- Register Widget
-vicious.register(weatherwidget, vicious.widgets.weather, 
-	function (widget, args) weather_t:set_text("City: " .. args["{city}"] ..
-												"\nWind: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. 
-												"\nSky: " .. args["{sky}"] .. 
-												"\nHumidity: " .. args["{humid}"] .. "%")
-      										  return " Weather: " .. args["{tempc}"] .. "C | " end, 300, "SBJV")
-      --'300': check every 5 minutes.
-      --'SBJV': the Joinville, Brazil's ICAO code.
-
-
-
-
-
-
-
-
-
+vicious.register(netwidget, vicious.widgets.net, ' <span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span> |', 1)
 
 
 -- Create a wibox for each screen and add it
@@ -253,11 +235,11 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(cpuwidget)
+	right_layout:add(cpuwidget)
     right_layout:add(memwidget)
-	right_layout:add(weatherwidget)
+    right_layout:add(uptimewidget)
     right_layout:add(netwidget)
-    right_layout:add(mytextclock)
+	right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -328,7 +310,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
     --Scrot printscreen of selected area
-    awful.key({ }, "Print", function () awful.util.spawn_with_shell("sleep 0.5 && scrot -s -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
+    awful.key({ }, "Print", function () awful.util.spawn_with_shell("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
