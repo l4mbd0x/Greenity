@@ -4,7 +4,7 @@ local awful = require("awful")
 rateWidget = wibox.widget.textbox()
 
 -- DBus (Command are sent to Dbus, which prevents Awesome from freeze)
-sleepTimerDbus = timer ({timeout = 1800})
+sleepTimerDbus = timer ({timeout = 86400})
 sleepTimerDbus:connect_signal ("timeout", 
   function ()
     awful.util.spawn_with_shell("dbus-send --session --dest=org.naquadah.awesome.awful /com/console/rate com.console.rate.rateWidget string:$(python ~/.config/awesome/RateWidget/rates.py)" )
