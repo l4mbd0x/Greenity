@@ -131,30 +131,35 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- == Widgets ==
 
 -- Create a Textclock Widget
-mytextclock = awful.widget.textclock()
+local mytextclock = awful.widget.textclock()
 
 -- Create a text memory widget
-memwidget = wibox.widget.textbox()
+local memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, ' $1% $2MBs/$3MBs', 1)
 
 -- Create a cpu graph widget
-cpuwidget = awful.widget.graph()
+local cpuwidget = awful.widget.graph()
 cpuwidget:set_width(50)
 cpuwidget:set_background_color("#000000")
 cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#088A08"}, {1, "#31B404" }}})
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
 -- Create a uptime widget
-uptimewidget = wibox.widget.textbox()
+local uptimewidget = wibox.widget.textbox()
 uptimewidget_t = awful.tooltip({ objects = {uptimewidget}, })
-vicious.register(uptimewidget, vicious.widgets.uptime, function (widget, args) 
-uptimewidget_t:set_text(' '..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins') 
+vicious.register(uptimewidget, vicious.widgets.uptime, function (widget, args)
+uptimewidget_t:set_text(' '..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins')
 return string.format(' Uptime: ' ..args[1].. ' days') end, 61)
 
 -- Create a network widget
-netwidget = wibox.widget.textbox()
+local netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net, ' <span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span>', 1)
 
+-- Create a currency USD->BRL widget
+require("RateWidget.rates")
+
+-- Creates a volume display widget
+require("VolumeWidget.volume")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -238,7 +243,9 @@ for s = 1, screen.count() do
 	right_layout:add(cpuwidget)
     right_layout:add(memwidget)
     right_layout:add(uptimewidget)
+	right_layout:add(rateWidget)
     right_layout:add(netwidget)
+	right_layout:add(volume_widget)
 	right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -314,10 +321,11 @@ globalkeys = awful.util.table.join(
 
     --X screensaver to lock the screen when F12 is pressed
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
-    
-
+    awful.key({ }, "F3", function () awful.util.spawn("amixer set Master 5%+") end),
+	awful.key({ }, "F2", function () awful.util.spawn("amixer set Master 5%-") end),
+	
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()

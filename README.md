@@ -2,6 +2,7 @@
 _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 
 ##Dependencies required 
+- dbus
 - gears                    
 - vicious                  
 - treesome                 
@@ -12,13 +13,21 @@ _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 
 ##Features
 - Treesome layout              
-- Mem scalar widget            
-- CPU graph widget            
-- Default awesome date widget  
-- Uptime widget              
-- Download/Upload net widged   
-- Prtsc keybind¹               
-- Xscreensaver² lock    
+
+_Widgets_ 
+- RAM text            
+- CPU graph            
+- Volume display 
+- Uptime toolkit text 
+- Default awesome date 
+- Download/Upload text 
+- Currency USD/BRL text 
+
+_Keybindings_ 
+- Printscreen¹ PrtSc 
+- Increase volume F3 
+- Decrease volume F2 
+- Xscreensaver² lock F12 
 _¹screenshots to ~/Screenshots_  
 _²controlling locking and its keybinded activation_    
 
