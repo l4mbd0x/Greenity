@@ -15,13 +15,14 @@ _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 - Treesome layout              
 
 _Widgets_ 
-- RAM text            
-- CPU graph            
+- RAM text 
+- CPU graph 
 - Volume display 
 - Uptime toolkit text 
 - Default awesome date 
 - Download/Upload text 
-- Currency USD/BRL text 
+- Weather display toolkit text 
+- Currency USD/BRL toolkit text 
 
 _Keybindings_ 
 - Printscreen¹ PrtSc 

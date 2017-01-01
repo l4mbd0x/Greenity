@@ -145,11 +145,7 @@ cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = {
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
 -- Creates a uptime widget
-local uptimewidget = wibox.widget.textbox()
-uptimewidget_t = awful.tooltip({ objects = {uptimewidget}, })
-vicious.register(uptimewidget, vicious.widgets.uptime, function (widget, args)
-uptimewidget_t:set_text(' '..args[1].. ' days ' ..args[2].. 'hrs ' .. args[3] .. 'mins')
-return string.format(' Uptime: ' ..args[1].. ' days') end, 61)
+require("UptimeWidget.uptime")
 
 -- Creates a network widget
 local netwidget = wibox.widget.textbox()
@@ -245,10 +241,10 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
 	right_layout:add(cpuwidget)
     right_layout:add(memwidget)
-    right_layout:add(uptimewidget)
+    right_layout:add(netwidget)
+    right_layout:add(uptimeWidget)
 	right_layout:add(rateWidget)
 	right_layout:add(weatherWidget)
-    right_layout:add(netwidget)
 	right_layout:add(volume_widget)
 	right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])

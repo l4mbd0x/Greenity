@@ -1,7 +1,7 @@
 local wibox = require("wibox")
 local awful = require("awful")
 
-rateWidget = wibox.widget.textbox()
+rateWidget = wibox.widget.imagebox()
 
 -- DBus (Command are sent to Dbus, which prevents Awesome from freeze)
 sleepTimerDbus = timer ({timeout = 86400})
@@ -18,6 +18,16 @@ dbus.add_match("session", "interface='com.console.rate', member='rateWidget' " )
 dbus.connect_signal("com.console.rate", 
   function (...)
     local data = {...}
-    local dbustext = data[2]
-    rateWidget:set_text(" BRL($)="..dbustext)
-  end)
+    local value = data[2]
+	rateWidget2 = awful.tooltip({ objects = {rateWidget}, })
+	rateWidget2:set_text("1 USD = "..value.." BRL") end)
+
+function image2(widget)
+  widget:set_image("/home/lambd0x/.config/awesome/RateWidget/img1.png")
+end
+
+image2(rateWidget)
+mytimer = timer({ timeout = 0.2 })
+mytimer:connect_signal("timeout", function () image2(rateWidget) end)
+mytimer:start()
+
