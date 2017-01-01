@@ -18,10 +18,9 @@ dbus.add_match("session", "interface='com.console.weather', member='weatherWidge
 dbus.connect_signal("com.console.weather", 
 function (...)
     local data = {...}
-	local tempC, feelsC = string.match(data[2], "(.*)>s*(.*)")
+	local tempC, feelsC = string.match(data[2], "(.*);s*(.*)")
 	weatherWidget2 = awful.tooltip({ objects = {weatherWidget}, })
 	weatherWidget2:set_text("Temperature: "..tempC.."ºC\nFeels like: "..feelsC.."ºC\nJoinville, Santa Catarina - Brazil") end)
-
 
 function image(widget)
   widget:set_image("/home/lambd0x/.config/awesome/WeatherWidget/img1.png")
