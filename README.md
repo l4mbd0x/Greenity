@@ -7,9 +7,10 @@ _Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
 - vicious                  
 - treesome                 
 - beautiful               
-- xscreensaver              
+- i3lock              
 - urxvt (rxvt-unicode)     
 - scrot (Screenshot for X) 
+- consolekit (shutdown & reboot scripts)
 
 ##Features
 - Treesome layout              
@@ -28,9 +29,8 @@ _Keybindings_
 - Printscreen¹ PrtSc 
 - Increase volume F3 
 - Decrease volume F2 
-- Xscreensaver² lock F12 
+- i3lock F12 
 _¹screenshots to ~/Screenshots_  
-_²controlling locking and its keybinded activation_    
 
 ## Install
 Clone and copy awesome directory directly to your ~/.config/awesome  
@@ -39,3 +39,5 @@ Clone and copy awesome directory directly to your ~/.config/awesome
 Emerge
 _pixbuf with X jpeg USE flags to solve gears dep_  
 _curl with ipv6 ssl openssl flags to solve vicious dep_  
+
+Add consolekit to default runtime
