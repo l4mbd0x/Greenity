@@ -90,43 +90,54 @@ for s = 1, screen.count() do
 end
 -- }}}
 
+-- Menubar configuration
+menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+awesomemenu = {
+   { "See manual", terminal .. " -e man awesome" },
+   { "Edit config", editor_cmd .. " " .. awesome.conffile },
+   { "AWM Restart", awesome.restart },
+   { "AWM Quit", awesome.quit }
 }
 
-webstuff = {
+-- Reboot/Shutdown requires dbus and consolekit compiled and consolekit has to be added to default runtime (sudo run-update add consolekit default)
+systemmenu = {
+	{ "Awesome WM", awesomemenu },
+	{ "Reboot", "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart" },
+	{ "Shutdown" , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop" },
+	{ "Lock Screen" , function () awful.util.spawn("xscreensaver-command -lock") end}
+}
+
+webmenu = {
 	{ "Firefox", "firefox" },
-	{ "Chrome", "google-chrome-stable"},
 	{ "Thunderbird", "thunderbird"},
+	{ "Transmission", "transmission-qt"}
 }
 
-devstuff = {
-	{ "Libreoffice", "libreoffice"},
+devmenu = {
 	{ "Gimp", "gimp"},
 	{ "Kile", "kile"},
-	{ "Inkscape", "inkscape"}
+	{ "Inkscape", "inkscape"},
+	{ "Libreoffice", "libreoffice"}
 }
 
 
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-				    			    { "Webstuff", webstuff },
-				    				{ "Devstuff", devstuff }
+mymainmenu = awful.menu({ items = { { "System", systemmenu, beautiful.awesome_icon },
+				    			    { "Web apps", webmenu },
+				    				{ "Edit apps", devmenu }
 				  }
 			})
           
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
+-- == Colors ==
+coEnd  = "</span>"
+col1 = "<span color='#0AD60A'>" -- light green
+col2 = "<span color='#B1D60A'>" -- yellow
 
--- {{{ Wibox
 
 -- == Widgets ==
 
@@ -149,7 +160,7 @@ require("UptimeWidget.uptime")
 
 -- Creates a network widget
 local netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, ' <span color="#088A08">⇩${eth0 down_kb}</span> <span color="#088A08">${eth0 up_kb}⇧</span>', 1)
+vicious.register(netwidget, vicious.widgets.net, col1 .. "⇩${eth0 down_kb}" .. coEnd .. " " .. col2 .. "${eth0 up_kb}⇧" .. coEnd .. " ", 1)
 
 -- Creates a currency USD->BRL widget
 require("RateWidget.rates")
@@ -302,7 +313,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
@@ -313,14 +323,16 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
+
     --Treesome
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
-    --Scrot printscreen of selected area
+
+    --Scrot printscreen of screen
     awful.key({ }, "Print", function () awful.util.spawn_with_shell("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 
-    --X screensaver to lock the screen when F12 is pressed
-    awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end), 
+    --i3lock whenever F12 is pressed
+    awful.key({ }, "F12", function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock_fuzzy.sh") end),
     awful.key({ }, "F3", function () awful.util.spawn("amixer set Master 5%+") end),
 	awful.key({ }, "F2", function () awful.util.spawn("amixer set Master 5%-") end),
 	

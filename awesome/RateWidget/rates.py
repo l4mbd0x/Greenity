@@ -6,4 +6,4 @@ import json
 r = requests.get("http://api.fixer.io/latest?base=USD;symbols=BRL")
 resp = json.loads(r.content)
 
-print str(resp["date"])+";"+str(resp["rates"]["BRL"])
+print str(resp["rates"]["BRL"])
