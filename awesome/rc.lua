@@ -107,26 +107,28 @@ systemmenu = {
 	{ "Awesome WM", awesomemenu },
 	{ "Reboot", "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart" },
 	{ "Shutdown" , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop" },
-	{ "Lock Screen" , function () awful.util.spawn("xscreensaver-command -lock") end}
+	{ "Lock Screen" , function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock_fuzzy.sh") end}
 }
 
 webmenu = {
 	{ "Firefox", "firefox" },
-	{ "Thunderbird", "thunderbird"},
-	{ "Transmission", "transmission-qt"}
+	{ "Thunderbird", "thunderbird" },
+	{ "Skypeforlinux", "skypeforlinux" },
+	{ "Transmission", "transmission-qt" }
 }
 
-devmenu = {
-	{ "Gimp", "gimp"},
-	{ "Kile", "kile"},
-	{ "Inkscape", "inkscape"},
-	{ "Libreoffice", "libreoffice"}
+genmenu = {
+	{ "Gimp", "gimp "},
+	{ "Kile", "kile" },
+	{ "Steam", function () awful.util.spawn_with_shell("STEAM_RUNTIME=1 steam") end },
+	{ "Inkscape", "inkscape" },
+	{ "Libreoffice", "libreoffice" }
 }
 
 
 mymainmenu = awful.menu({ items = { { "System", systemmenu, beautiful.awesome_icon },
 				    			    { "Web apps", webmenu },
-				    				{ "Edit apps", devmenu }
+				    				{ "Gen. apps", genmenu }
 				  }
 			})
           
@@ -328,7 +330,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "h", treesome.vertical),
     awful.key({ modkey }, "v", treesome.horizontal),
 
-    --Scrot printscreen of screen
+    --Scrot printscreen
     awful.key({ }, "Print", function () awful.util.spawn_with_shell("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 
     --i3lock whenever F12 is pressed
@@ -346,6 +348,7 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end)
 )
@@ -522,6 +525,4 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
---To xscreensaver start
-awful.util.spawn_with_shell("xscreensaver -no-splash")
 -- }}}
