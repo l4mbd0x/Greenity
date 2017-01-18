@@ -113,14 +113,16 @@ systemmenu = {
 webmenu = {
 	{ "Firefox", "firefox" },
 	{ "Thunderbird", "thunderbird" },
-	{ "Skypeforlinux", "skypeforlinux" },
-	{ "Transmission", "transmission-qt" }
+	{ "Transmission", "transmission-qt" },
+	{ "Skypeforlinux", "skypeforlinux" }
 }
 
 genmenu = {
 	{ "Gimp", "gimp "},
 	{ "Kile", "kile" },
 	{ "Steam", function () awful.util.spawn_with_shell("STEAM_RUNTIME=1 steam") end },
+	{ "Cheese", "cheese" },
+	{ "Encryptr", "Encryptr" },
 	{ "Inkscape", "inkscape" },
 	{ "Libreoffice", "libreoffice" }
 }
