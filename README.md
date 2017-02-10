@@ -18,7 +18,7 @@ _Awesome WM config file based on the Vertex Theme (v4.0)_
 - freedesktop (N) 
 - FontAwesome (E) 
 
-_Action required_
+_Action required_ 
 N = none
 E = emerge it
 
@@ -36,7 +36,7 @@ _Widgets_
 - Weather display toolkit text  (R) 
 - Currency USD/BRL toolkit text (S) 
 
-_Status_
+_Status_ 
 S = soon 
 R = ready 
 
