@@ -1,29 +1,44 @@
 # Awesome-wm-Funtoo-GreenInfinity
-_Funtoo Awesome Wm config file based on the Zenburn Theme (v3.5.9)_
+_Awesome WM config file based on the Vertex Theme (v4.0)_
 
 ##Dependencies required 
-- dbus
-- gears                    
-- vicious                  
-- treesome                 
-- beautiful               
-- i3lock              
-- urxvt (rxvt-unicode)     
-- scrot (Screenshot for X) 
-- consolekit (shutdown & reboot scripts)
+- lain        (N) 
+- urxvt       (E) 
+- scrot       (E) 
+- dmenu       (E) 
+- gears       (E) 
+- i3lock      (E) 
+- Roboto      (E) 
+- naughty     (N) 
+- vicious     (N) 
+- eminent     (E) 
+- treetile    (N) 
+- beautiful   (N) 
+- unclutter   (E) 
+- freedesktop (N) 
+- FontAwesome (E) 
+
+_Action required_
+N = none
+E = emerge it
 
 ##Features
-- Treesome layout              
+_Others_
+- Binary Tree tiling style layout 
 
 _Widgets_ 
-- RAM text 
-- CPU graph 
-- Volume display 
-- Uptime toolkit text 
-- Default awesome date 
-- Download/Upload text 
-- Weather display toolkit text 
-- Currency USD/BRL toolkit text 
+- RAM text                      (S) 
+- CPU graph                     (S) 
+- Volume display                (R) 
+- Uptime toolkit text           (S) 
+- Download/Upload text          (S) 
+- time/date toolkit text        (R) 
+- Weather display toolkit text  (R) 
+- Currency USD/BRL toolkit text (S) 
+
+_Status_
+S = soon 
+R = ready 
 
 _Keybindings_ 
 - Printscreen¹ PrtSc 
@@ -39,5 +54,3 @@ Clone and copy awesome directory directly to your ~/.config/awesome
 Emerge
 _pixbuf with X jpeg USE flags to solve gears dep_  
 _curl with ipv6 ssl openssl flags to solve vicious dep_  
-
-Add consolekit to default runtime
