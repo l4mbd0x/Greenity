@@ -19,8 +19,8 @@ _Awesome WM config file based on the Vertex Theme (v4.0)_
 - FontAwesome (E) 
 
 _Action required_ 
-N = none
-E = emerge it
+- N = none 
+- E = emerge it 
 
 ##Features
 _Others_
@@ -37,8 +37,8 @@ _Widgets_
 - Currency USD/BRL toolkit text (S) 
 
 _Status_ 
-S = soon 
-R = ready 
+- S = soon 
+- R = ready 
 
 _Keybindings_ 
 - Printscreen¹ PrtSc 
