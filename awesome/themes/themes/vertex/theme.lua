@@ -27,6 +27,7 @@ theme.bg_urgent                                 = "#6A95E8"
 theme.border_width                              = 4
 theme.border_normal                             = "#252525"
 theme.border_focus                              = "#087C00"
+
 theme.tooltip_border_color                      = theme.fg_focus
 theme.tooltip_border_width                      = theme.border_width
 theme.menu_height                               = 24
@@ -35,7 +36,19 @@ theme.awesome_icon                              = theme.icon_dir .. "/awesome.pn
 theme.taglist_squares_sel                       = theme.icon_dir .. "/square_sel.png"
 theme.taglist_squares_unsel                     = theme.icon_dir .. "/square_unsel.png"
 theme.panelbg                                   = theme.icon_dir .. "/panel.png"
-theme.cpu                                       = theme.icon_dir .. "/cpu.png"
+theme.bat000charging                            = theme.icon_dir .. "/bat-000-charging.png"
+theme.bat000                                    = theme.icon_dir .. "/bat-000.png"
+theme.bat020charging                            = theme.icon_dir .. "/bat-020-charging.png"
+theme.bat020                                    = theme.icon_dir .. "/bat-020.png"
+theme.bat040charging                            = theme.icon_dir .. "/bat-040-charging.png"
+theme.bat040                                    = theme.icon_dir .. "/bat-040.png"
+theme.bat060charging                            = theme.icon_dir .. "/bat-060-charging.png"
+theme.bat060                                    = theme.icon_dir .. "/bat-060.png"
+theme.bat080charging                            = theme.icon_dir .. "/bat-080-charging.png"
+theme.bat080                                    = theme.icon_dir .. "/bat-080.png"
+theme.bat100charging                            = theme.icon_dir .. "/bat-100-charging.png"
+theme.bat100                                    = theme.icon_dir .. "/bat-100.png"
+theme.batcharged                                = theme.icon_dir .. "/bat-charged.png"
 theme.ethon                                     = theme.icon_dir .. "/ethernet-connected.png"
 theme.ethoff                                    = theme.icon_dir .. "/ethernet-disconnected.png"
 theme.volhigh                                   = theme.icon_dir .. "/volume-high.png"
@@ -44,11 +57,12 @@ theme.volmed                                    = theme.icon_dir .. "/volume-med
 theme.volmutedblocked                           = theme.icon_dir .. "/volume-muted-blocked.png"
 theme.volmuted                                  = theme.icon_dir .. "/volume-muted.png"
 theme.voloff                                    = theme.icon_dir .. "/volume-off.png"
-theme.net_up                                    = theme.icon_dir .. "/net_up.png"
-theme.net_down                                  = theme.icon_dir .. "/net_down.png"
-theme.widget_mem                                = theme.icon_dir .. "/mem.png"
-theme.widget_temp                               = theme.icon_dir .. "/temp.png"
-theme.widget_uptime                             = theme.icon_dir .. "/ac.png"
+theme.wifidisc                                  = theme.icon_dir .. "/wireless-disconnected.png"
+theme.wififull                                  = theme.icon_dir .. "/wireless-full.png"
+theme.wifihigh                                  = theme.icon_dir .. "/wireless-high.png"
+theme.wifilow                                   = theme.icon_dir .. "/wireless-low.png"
+theme.wifimed                                   = theme.icon_dir .. "/wireless-medium.png"
+theme.wifinone                                  = theme.icon_dir .. "/wireless-none.png"
 theme.layout_fairh                              = theme.default_dir.."/layouts/fairhw.png"
 theme.layout_fairv                              = theme.default_dir.."/layouts/fairvw.png"
 theme.layout_floating                           = theme.default_dir.."/layouts/floatingw.png"
@@ -93,7 +107,6 @@ theme.titlebar_maximized_button_focus_active    = theme.default_dir.."/titlebar/
 awful.util.tagnames = {" ", " ", " ", " ", " ", " ", " ", " ", " " }
 
 local markup = lain.util.markup
-local space3 = markup.font("Roboto 3", " ")
 
 -- Clock
 --os.setlocale(os.getenv("LANG")) -- to localize the clock
@@ -108,28 +121,6 @@ lain.widget.calendar({
         font = "Monospace 10"
     }
 })
-
--- CPU
-local cpu_icon = wibox.widget.imagebox(theme.cpu)
-local cpu = lain.widget.cpu({
-    settings = function()
-        widget:set_markup(space3 .. markup.font(theme.font, "CPU " .. cpu_now.usage .. "%") .. markup.font("Roboto 5", " "))
-    end
-})
-local cpubg = wibox.container.background(cpu.widget, theme.bg_focus, gears.shape.rectangle)
-local cpuwidget = wibox.container.margin(cpubg, 0, 0, 5, 5)
-
--- Net
-local netdown_icon = wibox.widget.imagebox(theme.net_down)
-local netup_icon = wibox.widget.imagebox(theme.net_up)
-local net = lain.widget.net({
-    settings = function()
-        widget:set_markup(markup.font("Roboto 1", " ") .. markup.font(theme.font, math.floor(net_now.received) .. " - " ..
-		math.floor(net_now.sent)) .. markup.font("Roboto 2", " "))
-    end
-})
-local netbg = wibox.container.background(net.widget, theme.bg_focus, gears.shape.rectangle)
-local networkwidget = wibox.container.margin(netbg, 0, 0, 5, 5)
 
 -- MPD
 theme.mpd = lain.widget.mpd({
@@ -207,14 +198,6 @@ theme.weather = lain.widget.weather({
     end
 })
 
--- Mem
-local memicon = wibox.widget.imagebox(theme.widget_mem)
-local memory = lain.widget.mem({
-    settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#FFFFFF", mem_now.used .. "M "))
-    end
-})
-
 -- Launcher
 local mylauncher = awful.widget.button({image = theme.awesome_icon})
 mylauncher:connect_signal("button::press", function() awful.util.mymainmenu:toggle() end)
@@ -228,9 +211,9 @@ local rspace3 = wibox.widget.textbox()
 local tspace1 = wibox.widget.textbox()
 tspace1.forced_width = 18
 rspace1.forced_width = 16
-rspace0.forced_width = 5
-rspace2.forced_width = 10
-rspace3.forced_width = 15
+rspace0.forced_width = 18
+rspace2.forced_width = 19
+rspace3.forced_width = 21
 
 local lspace1 = wibox.widget.textbox()
 local lspace2 = wibox.widget.textbox()
@@ -306,23 +289,18 @@ function theme.at_screen_connect(s)
         },
         { -- Middle widgets
             layout = wibox.layout.flex.horizontal,
+            space,
             mytextclock,
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.container.constraint(wibox.widget { nil, nil, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "exact", s.workarea.width/3),
-            netdown_icon,
-            networkwidget,
-            netup_icon,
             rspace0,
-            cpu_icon,
-            cpuwidget,
-            memicon,
-            memory.widget,
             theme.weather.icon,
             theme.weather.widget,
-            volicon,
             rspace0,
+            volicon,
+			rspace0,
             wibox.widget.systray(),
         },
     }

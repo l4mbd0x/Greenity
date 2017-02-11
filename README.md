@@ -1,7 +1,8 @@
 # Awesome-wm-Funtoo-GreenInfinity
 _Awesome WM config file based on the Vertex Theme (v4.0)_
 
-##Dependencies required 
+## Dependencies required 
+- xset        (E) 
 - lain        (N) 
 - urxvt       (E) 
 - scrot       (E) 
@@ -22,19 +23,17 @@ _Action required_
 - N = none 
 - E = emerge it 
 
-##Features
+## Features
 _Others_
 - Binary Tree tiling style layout 
 
 _Widgets_ 
-- RAM text                      (S) 
-- CPU graph                     (S) 
+- RAM text                      (R) 
+- CPU graph                     (R) 
 - Volume display                (R) 
-- Uptime toolkit text           (S) 
-- Download/Upload text          (S) 
+- Download/Upload text          (R) 
 - time/date toolkit text        (R) 
 - Weather display toolkit text  (R) 
-- Currency USD/BRL toolkit text (S) 
 
 _Status_ 
 - S = soon 
@@ -47,10 +46,10 @@ _Keybindings_
 - i3lock F12 
 _¹screenshots to ~/Screenshots_  
 
-## Install
+## Way to use it
 Clone and copy awesome directory directly to your ~/.config/awesome  
 
-##Note for Funtoo/Gentoo users:  
+## Note for Funtoo/Gentoo users  
 Emerge
 _pixbuf with X jpeg USE flags to solve gears dep_  
 _curl with ipv6 ssl openssl flags to solve vicious dep_  

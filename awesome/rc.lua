@@ -60,10 +60,16 @@ local editor        = os.getenv("EDITOR") or "vim" or "vi"
 local browser       = "firefox"
 local terminal      = "urxvtc" or "xterm"
 local screenshot    = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
+local pdf_viewer    = "okular"
+local latex_editor  = "kile"
+local image_editor  = "gimp"
 local file_manager  = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
 local email_client  = "thunderbird"
 local chosen_theme  = "vertex"
+local vector_editor = "inkscape"
+local office_editor = "libreoffice"
 awful.util.terminal = terminal
+
 
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
@@ -380,11 +386,20 @@ globalkeys = awful.util.table.join(
         end),
 
     -- User programs
-    awful.key({ modkey }, "e", function () awful.util.spawn_with_shell(file_manager) end),
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end),
-    awful.key({ modkey }, "a", function () awful.spawn(email_client) end),
+	-- Web
+    awful.key({ altkey }, "1", function () awful.spawn(browser) end),
+    awful.key({ altkey }, "2", function () awful.spawn(email_client) end),
+    -- File management
+    awful.key({ altkey }, "3", function () awful.util.spawn_with_shell(file_manager) end),
+	-- Image editing
+    awful.key({ altkey }, "4", function () awful.spawn(image_editor) end),
+    awful.key({ altkey }, "5", function () awful.spawn(vector_editor) end),
+	-- File editing
+    awful.key({ altkey }, "6", function () awful.spawn(office_editor) end),
+    awful.key({ altkey }, "7", function () awful.spawn(pdf_viewer) end),
+    awful.key({ altkey }, "8", function () awful.spawn(latex_editor) end),
 
-    -- Prompt
+	-- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
@@ -533,8 +548,21 @@ awful.rules.rules = {
 	-- Set Inkscape to always map on the seventh tag on screen 1.
 	{ rule = { class = "Inkscape" },
       properties = { screen = 1, tag = screen[1].tags[7] } }, 
+    
+	-- Set Libreoffice to always map on the third tag on screen 1.
+	{ rule = { class = "libreoffice" },
+      properties = { screen = 1, tag = screen[1].tags[3] } },
+	
+	-- Set Okular PDF file viewer to always map on the third tag on screen 1.
+	{ rule = { class = "okular" },
+      properties = { screen = 1, tag = screen[1].tags[3] } },
+	
+	-- Set Kile to always map on the third tag on screen 1.
+	{ rule = { class = "Kile" },
+      properties = { screen = 1, tag = screen[1].tags[3] } },
 }
 -- }}}
+
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
