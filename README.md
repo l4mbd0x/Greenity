@@ -29,7 +29,7 @@ _Others_
 
 _Widgets_ 
 - RAM text                      (R) 
-- CPU graph                     (R) 
+- CPU text                      (R) 
 - Volume display                (R) 
 - Download/Upload text          (R) 
 - time/date toolkit text        (R) 
@@ -43,7 +43,7 @@ _Keybindings_
 - Printscreen¹ PrtSc 
 - Increase volume F3 
 - Decrease volume F2 
-- i3lock F12 
+- Screen block F12
 _¹screenshots to ~/Screenshots_  
 
 ## Way to use it
