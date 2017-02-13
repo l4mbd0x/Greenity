@@ -26,12 +26,11 @@ _Widgets_
 - [x] Weather display toolkit text  
 
 _Keybindings_ 
+- Block screen: F12
 - Printscreen¹ PrtSc 
 - Increase volume: F3 
 - Decrease volume: F2 
-- Screen block: F12
-- Applications keybinded: alt + [1, ..., 0]
-- Specific application to tags controlled by the above apps keybindings
+- Specific application to tags controlled by keybinded apps
   - File manager -> Dolphin
   - Image editor -> Gimp, etc.
   - Gaming apps -> Steam, etc.
@@ -40,6 +39,8 @@ _Keybindings_
   - Audio/Video -> Popcorntime, etc.
   - Chat client -> Skypeforlinux, etc.
   - Email client -> Thunderbird/Earlybird 
+- Keybinded apps: alt + [1, ..., 0]
+
 _¹screenshots to ~/Screenshots_  
 
 ## Way to use it
