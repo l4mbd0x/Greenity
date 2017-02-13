@@ -2,8 +2,6 @@
 _Awesome WM config file based on the Vertex Theme (v4.0)_
 
 ## Dependencies required 
-| | |
------
 - [x] xset         
 - [x] urxvt        
 - [x] scrot        
@@ -41,7 +39,7 @@ _Keybindings_
   - Document -> Libreoffice, etc.
   - Audio/Video -> Popcorntime, etc.
   - Chat client -> Skypeforlinux, etc.
-  - Email client -> Thunderbird/Earlybird
+  - Email client -> Thunderbird/Earlybird 
 _¹screenshots to ~/Screenshots_  
 
 ## Way to use it
