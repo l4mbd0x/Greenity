@@ -2,48 +2,46 @@
 _Awesome WM config file based on the Vertex Theme (v4.0)_
 
 ## Dependencies required 
-- xset        (E) 
-- lain        (N) 
-- urxvt       (E) 
-- scrot       (E) 
-- dmenu       (E) 
-- gears       (E) 
-- i3lock      (E) 
-- Roboto      (E) 
-- naughty     (N) 
-- vicious     (N) 
-- eminent     (E) 
-- treetile    (N) 
-- beautiful   (N) 
-- unclutter   (E) 
-- freedesktop (N) 
-- FontAwesome (E) 
-
-_Action required_ 
-- N = none 
-- E = emerge it 
+| | |
+-----
+- [x] xset         
+- [x] urxvt        
+- [x] scrot        
+- [x] dmenu        
+- [x] gears        
+- [x] i3lock       
+- [x] Roboto       
+- [x] eminent      
+- [x] unclutter    
+- [x] FontAwesome  
 
 ## Features
 _Others_
 - Binary Tree tiling style layout 
 
 _Widgets_ 
-- RAM text                      (R) 
-- CPU text                      (R) 
-- Volume display                (R) 
-- Download/Upload text          (R) 
-- time/date toolkit text        (R) 
-- Weather display toolkit text  (R) 
-
-_Status_ 
-- S = soon 
-- R = ready 
+- [x] RAM text                      
+- [x] CPU text                      
+- [x] Volume display                
+- [x] Download/Upload text          
+- [x] time/date toolkit text        
+- [x] Weather display toolkit text  
 
 _Keybindings_ 
 - Printscreen¹ PrtSc 
-- Increase volume F3 
-- Decrease volume F2 
-- Screen block F12
+- Increase volume: F3 
+- Decrease volume: F2 
+- Screen block: F12
+- Applications keybinded: alt + [1, ..., 0]
+- Specific application to tags controlled by the above apps keybindings
+  - File manager -> Dolphin
+  - Image editor -> Gimp, etc.
+  - Gaming apps -> Steam, etc.
+  - Browser -> Firefox Aurora
+  - Document -> Libreoffice, etc.
+  - Audio/Video -> Popcorntime, etc.
+  - Chat client -> Skypeforlinux, etc.
+  - Email client -> Thunderbird/Earlybird
 _¹screenshots to ~/Screenshots_  
 
 ## Way to use it
