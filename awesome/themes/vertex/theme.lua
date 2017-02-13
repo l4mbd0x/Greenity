@@ -104,7 +104,7 @@ lain.widget.calendar({
     notification_preset = {
         fg = "#FFFFFF",
         bg = theme.bg_normal,
-        position = "top_middle",
+        position = "top_right",
         font = "Monospace 10"
     }
 })
@@ -130,25 +130,6 @@ local net = lain.widget.net({
 })
 local netbg = wibox.container.background(net.widget, theme.bg_focus, gears.shape.rectangle)
 local networkwidget = wibox.container.margin(netbg, 0, 0, 5, 5)
-
--- MPD
-theme.mpd = lain.widget.mpd({
-    music_dir = "/mnt/storage/Downloads/Music",
-    settings = function()
-        if mpd_now.state == "play" then
-            title = mpd_now.title
-            artist  = "  " .. mpd_now.artist  .. " "
-        elseif mpd_now.state == "pause" then
-            title = "mpd "
-            artist  = "paused "
-        else
-            title  = ""
-            artist = ""
-        end
-
-        widget:set_markup(markup.font(theme.font, title .. markup(theme.fg_focus, artist)))
-    end
-})
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox()
@@ -230,7 +211,7 @@ tspace1.forced_width = 18
 rspace1.forced_width = 16
 rspace0.forced_width = 5
 rspace2.forced_width = 10
-rspace3.forced_width = 15
+rspace3.forced_width = 25
 
 local lspace1 = wibox.widget.textbox()
 local lspace2 = wibox.widget.textbox()
@@ -306,11 +287,9 @@ function theme.at_screen_connect(s)
         },
         { -- Middle widgets
             layout = wibox.layout.flex.horizontal,
-            mytextclock,
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.container.constraint(wibox.widget { nil, nil, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "exact", s.workarea.width/3),
             netdown_icon,
             networkwidget,
             netup_icon,
@@ -323,6 +302,8 @@ function theme.at_screen_connect(s)
             theme.weather.widget,
             volicon,
             rspace0,
+			mytextclock,
+            rspace1,
             wibox.widget.systray(),
         },
     }
