@@ -54,6 +54,8 @@ run_once({ "urxvtd", "unclutter -root" })
 -- }}}
 
 -- {{{ Variable definitions
+--
+local gaming        = "STEAM_RUNTIME=1 steam"
 local modkey        = "Mod4"
 local altkey        = "Mod1"
 local editor        = os.getenv("EDITOR") or "vim" or "vi"
@@ -61,6 +63,7 @@ local browser       = "firefox"
 local terminal      = "urxvtc" or "xterm"
 local screenshot    = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer    = "okular"
+local stream_plat   = "popcorntime-bin"
 local latex_editor  = "kile"
 local image_editor  = "gimp"
 local file_manager  = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
@@ -342,47 +345,15 @@ globalkeys = awful.util.table.join(
 	awful.key({ }, "F12", function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock_fuzzy.sh") end),
 
     -- ALSA volume control
-    awful.key({ }, "F3",
+    -- Increase
+	awful.key({ }, "F3",
         function ()
         awful.util.spawn("amixer set Master 5%+")
         end),
+	-- Decrease
     awful.key({ }, "F2",
         function ()
         awful.util.spawn("amixer set Master 5%-")
-        end),
-
-    -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            awful.spawn.with_shell("mpc toggle")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            awful.spawn.with_shell("mpc stop")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            awful.spawn.with_shell("mpc prev")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            awful.spawn.with_shell("mpc next")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey }, "0",
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
         end),
 
     -- User programs
@@ -398,6 +369,10 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey }, "6", function () awful.spawn(office_editor) end),
     awful.key({ altkey }, "7", function () awful.spawn(pdf_viewer) end),
     awful.key({ altkey }, "8", function () awful.spawn(latex_editor) end),
+    -- Gaming
+	awful.key({ altkey }, "9", function () awful.util.spawn_with_shell(gaming) end),
+	-- Streaming platform
+	awful.key({ altkey }, "0", function () awful.spawn(stream_plat) end),
 
 	-- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -560,6 +535,14 @@ awful.rules.rules = {
 	-- Set Kile to always map on the third tag on screen 1.
 	{ rule = { class = "Kile" },
       properties = { screen = 1, tag = screen[1].tags[3] } },
+    
+	-- Set Steam to always map on the ninth tag on screen 1.
+	{ rule = { class = "Steam" },
+      properties = { screen = 1, tag = screen[1].tags[9] } },
+
+    -- Set Skype for Linux to always map on the sixth tag on screen 1.
+	{ rule = { class = "skypeforlinux" },
+      properties = { screen = 1, tag = screen[1].tags[6] } },
 }
 -- }}}
 
