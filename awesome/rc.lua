@@ -55,22 +55,25 @@ run_once({ "urxvtd", "unclutter -root" })
 
 -- {{{ Variable definitions
 --
-local gaming        = "STEAM_RUNTIME=1 steam"
-local modkey        = "Mod4"
-local altkey        = "Mod1"
-local editor        = os.getenv("EDITOR") or "vim" or "vi"
-local browser       = "firefox"
-local terminal      = "urxvtc" or "xterm"
-local screenshot    = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
-local pdf_viewer    = "okular"
-local stream_plat   = "popcorntime-bin"
-local latex_editor  = "kile"
-local image_editor  = "gimp"
-local file_manager  = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
-local email_client  = "thunderbird"
-local chosen_theme  = "vertex"
-local vector_editor = "inkscape"
-local office_editor = "libreoffice"
+local modkey         = "Mod4"
+local altkey         = "Mod1"
+local editor         = os.getenv("EDITOR") or "vim" or "vi"
+local browser        = "firefox"
+local terminal       = "urxvtc" or "xterm"
+local gaming_1       = "STEAM_RUNTIME=1 steam"
+local gaming_2       = "playonlinux"
+local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
+local pdf_viewer     = "okular"
+local stream_plat    = "popcorntime-bin"
+local latex_editor   = "kile"
+local image_editor   = "gimp"
+local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
+local email_client   = "thunderbird"
+local chosen_theme   = "vertex"
+local vector_editor  = "inkscape"
+local office_editor  = "libreoffice"
+local torrent_editor = "transmission-qt"
+local mindmap_editor = "xmind"
 awful.util.terminal = terminal
 
 
@@ -358,21 +361,24 @@ globalkeys = awful.util.table.join(
 
     -- User programs
 	-- Web
-    awful.key({ altkey }, "1", function () awful.spawn(browser) end),
-    awful.key({ altkey }, "2", function () awful.spawn(email_client) end),
+    awful.key({ modkey, altkey }, "b", function () awful.spawn(browser) end),
+    awful.key({ modkey, altkey }, "e", function () awful.spawn(email_client) end),
+	awful.key({ modkey, altkey }, "t", function () awful.spawn(torrent_client) end),
     -- File management
-    awful.key({ altkey }, "3", function () awful.util.spawn_with_shell(file_manager) end),
+    awful.key({ modkey, altkey }, "f", function () awful.util.spawn_with_shell(file_manager) end),
 	-- Image editing
-    awful.key({ altkey }, "4", function () awful.spawn(image_editor) end),
-    awful.key({ altkey }, "5", function () awful.spawn(vector_editor) end),
+    awful.key({ modkey, altkey }, "i", function () awful.spawn(image_editor) end),
+    awful.key({ modkey, altkey }, "v", function () awful.spawn(vector_editor) end),
 	-- File editing
-    awful.key({ altkey }, "6", function () awful.spawn(office_editor) end),
-    awful.key({ altkey }, "7", function () awful.spawn(pdf_viewer) end),
-    awful.key({ altkey }, "8", function () awful.spawn(latex_editor) end),
+    awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
+    awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
+    awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
+    awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
     -- Gaming
-	awful.key({ altkey }, "9", function () awful.util.spawn_with_shell(gaming) end),
+	awful.key({ modkey, altkey, "g" }, "1", function () awful.util.spawn_with_shell(gaming_1) end),
+    awful.key({ modkey, altkey, "g" }, "2", function () awful.util.spawn_with_shell(gaming_2) end),
 	-- Streaming platform
-	awful.key({ altkey }, "0", function () awful.spawn(stream_plat) end),
+	awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
 
 	-- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -506,43 +512,59 @@ awful.rules.rules = {
 
     -- Set Firefox web browser to always map on the first tag on screen 1.
     { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = screen[1].tags[1] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[1] } },
     
 	-- Set Dolphin file manager to always map on the fourth tag on screen 1.
     { rule = { class = "dolphin" },
-      properties = { screen = 1, tag = screen[1].tags[4] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
     
 	-- Set Thunderbird email client to always map on the fifth tag on screen 1.
     { rule = { class = "Thunderbird" },
-      properties = { screen = 1, tag = screen[1].tags[5] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
     
 	-- Set Gimp to always map on the seventh tag on screen 1.
 	{ rule = { class = "Gimp" },
-      properties = { screen = 1, tag = screen[1].tags[7] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
     
 	-- Set Inkscape to always map on the seventh tag on screen 1.
 	{ rule = { class = "Inkscape" },
-      properties = { screen = 1, tag = screen[1].tags[7] } }, 
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } }, 
     
 	-- Set Libreoffice to always map on the third tag on screen 1.
 	{ rule = { class = "libreoffice" },
-      properties = { screen = 1, tag = screen[1].tags[3] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 	
 	-- Set Okular PDF file viewer to always map on the third tag on screen 1.
 	{ rule = { class = "okular" },
-      properties = { screen = 1, tag = screen[1].tags[3] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 	
 	-- Set Kile to always map on the third tag on screen 1.
 	{ rule = { class = "Kile" },
-      properties = { screen = 1, tag = screen[1].tags[3] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
     
 	-- Set Steam to always map on the ninth tag on screen 1.
 	{ rule = { class = "Steam" },
-      properties = { screen = 1, tag = screen[1].tags[9] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[9] } },
 
-    -- Set Skype for Linux to always map on the sixth tag on screen 1.
+     -- Set Skype for Linux to always map on the sixth tag on screen 1.
 	{ rule = { class = "skypeforlinux" },
-      properties = { screen = 1, tag = screen[1].tags[6] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
+	
+	-- Set Telegram to always map on the sixth tag on screen 1.
+	{ rule = { class = "Telegram" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
+    
+	-- Set rxvt-unicode terminal emulator to always map on the second tag on screen 1.
+	{ rule = { class = "URxvt" },
+      properties = { screen = 1, tag = screen[1].tags[2] } },
+
+    -- Set Transmission torrent client to always map on the first tag on screen 1.
+	{ rule = { class = "transmission" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[1] } },
+
+    -- Set Xmind to always map on the first tag on screen 1.
+	{ rule = { class = "XMind" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 }
 -- }}}
 
