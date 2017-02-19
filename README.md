@@ -1,7 +1,9 @@
 # Awesome-wm-Funtoo-GreenInfinity
-_Awesome WM config file based on the Vertex Theme (v4.0)_
+_Awesome WM config file based on the Holo Theme (v4.0)_
 
 ## Dependencies required 
+- [x] mpc
+- [x] mpd
 - [x] xset         
 - [x] urxvt        
 - [x] scrot        
@@ -10,8 +12,11 @@ _Awesome WM config file based on the Vertex Theme (v4.0)_
 - [x] i3lock       
 - [x] Roboto       
 - [x] eminent      
+- [x] ncmpcpp
 - [x] unclutter    
+- [x] luasocket
 - [x] FontAwesome  
+
 
 ## Features
 _Others_
@@ -19,11 +24,13 @@ _Others_
 
 _Widgets_ 
 - [x] RAM text                      
-- [x] CPU text                      
+- [x] CPU graph                     
+- [x] MPD control
+- [x] Currency text
 - [x] Volume display                
 - [x] Download/Upload text          
-- [x] time/date toolkit text        
 - [x] Weather display toolkit text  
+- [x] time/date/calendar toolkit text        
 
 _Keybindings_ 
 - Block screen: F12
@@ -50,3 +57,7 @@ Clone and copy awesome directory directly to your ~/.config/awesome
 Emerge
 _pixbuf with X jpeg USE flags to solve gears dep_  
 _curl with ipv6 ssl openssl flags to solve vicious dep_  
+
+
+
+

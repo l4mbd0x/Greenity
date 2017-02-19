@@ -1,4 +1,3 @@
-
 -- {{{ Required libraries
 local awesome, client, screen, tag = awesome, client, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
@@ -54,11 +53,14 @@ run_once({ "urxvtd", "unclutter -root" })
 -- }}}
 
 -- {{{ Variable definitions
---
 local modkey         = "Mod4"
 local altkey         = "Mod1"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
+
+--Urxvt users
+-- Add to buffer: select data & Ctrl+Ins
+-- Ctrl+Alt+V
 local terminal       = "urxvtc" or "xterm"
 local gaming_1       = "STEAM_RUNTIME=1 steam"
 local gaming_2       = "playonlinux"
@@ -69,15 +71,13 @@ local latex_editor   = "kile"
 local image_editor   = "gimp"
 local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
 local email_client   = "thunderbird"
-local chosen_theme   = "vertex"
+local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
 local torrent_editor = "transmission-qt"
 local mindmap_editor = "xmind"
 awful.util.terminal = terminal
 
-
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
