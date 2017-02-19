@@ -58,6 +58,7 @@ Emerge
 _pixbuf with X jpeg USE flags to solve gears dep_  
 _curl with ipv6 ssl openssl flags to solve vicious dep_  
 
+![Image 1](https://github.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/blob/master/screenshots_taken/2017-02-19-015825_1600x900_scrot.png)
 
-
+![Image 2](https://github.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/blob/master/screenshots_taken/2017-02-19-015749_1600x900_scrot.png)
 
