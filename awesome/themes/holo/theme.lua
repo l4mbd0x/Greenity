@@ -158,23 +158,23 @@ function () awful.spawn(theme.musicplr) end)))
 prev_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc prev")
-    mpd.update()
+    --mpd.update()
 end)))
 next_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc next")
-    mpd.update()
+    --mpd.update()
 end)))
 stop_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     play_pause_icon:set_image(theme.play)
     awful.spawn.with_shell("mpc stop")
-    mpd.update()
+    --mpd.update()
 end)))
 play_pause_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc toggle")
-    mpd.update()
+    --mpd.update()
 end)))
 
 -- Weather
@@ -262,7 +262,6 @@ currency_timer:connect_signal("timeout", function ()
     if (resp_json ~= nil) then
         resp = json.decode(resp_json)
         temp_widget:set_text("" .. resp.rates.BRL)
-
     end
 end)
 currency_timer:emit_signal("timeout")
@@ -272,7 +271,7 @@ currency_widget:connect_signal("mouse::enter", function()
         text = "<b>A BRL values " .. resp.rates.BRL .." ".. resp.base .. "\nLast updated in: " .. resp.date .. " </b>",
         timeout = 3, hover_timeout = 0.5,
         width = 200,
-		position = "bottom_right",
+        position = "bottom_right",
     }
 end)
 local currencybg = wibox.container.background(currency_widget, theme.bg_focus, gears.shape.rectangle)
