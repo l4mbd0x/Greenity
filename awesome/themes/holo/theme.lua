@@ -254,21 +254,21 @@ currency_widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
 }
 
-local currency_timer = timer({ timeout = 600 })
+local currency_timer = timer({ timeout = 300 })
 local resp
 
 currency_timer:connect_signal("timeout", function ()
    local resp_json = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
     if (resp_json ~= nil) then
         resp = json.decode(resp_json)
-        temp_widget:set_text("" .. resp.rates.BRL)
+        temp_widget:set_text("R$" .. resp.rates.BRL)
     end
 end)
 currency_timer:emit_signal("timeout")
 
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
-        text = "<b>A BRL values " .. resp.rates.BRL .." ".. resp.base .. "\nLast updated in: " .. resp.date .. " </b>",
+        text = "<b>A USD values " .. resp.rates.BRL .." BRL\nLast updated in: " .. resp.date .. " </b>",
         timeout = 3, hover_timeout = 0.5,
         width = 200,
         position = "bottom_right",
