@@ -11,12 +11,11 @@ _Awesome WM config file based on the Holo Theme (v4.0)_
 - [x] gears        
 - [x] i3lock       
 - [x] Roboto       
-- [x] eminent      
 - [x] ncmpcpp
 - [x] unclutter    
 - [x] luasocket
 - [x] FontAwesome  
-
+_note1: to solve gears emerge pixbuf with X jpeg USE flags_
 
 ## Features
 _Others_
@@ -52,11 +51,6 @@ _¹screenshots to ~/Screenshots_
 
 ## Way to use it
 Clone and copy awesome directory directly to your ~/.config/awesome  
-
-## Note for Funtoo/Gentoo users  
-Emerge
-_pixbuf with X jpeg USE flags to solve gears dep_  
-_curl with ipv6 ssl openssl flags to solve vicious dep_  
 
 ![Image 1](https://github.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/blob/master/screenshots_taken/2017-02-21-004452_1600x900_scrot.png?raw=true)
 
