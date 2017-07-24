@@ -1,5 +1,5 @@
 # Awesome-wm-Funtoo-GreenInfinity
-_Awesome WM config file based on the Holo Theme (v4.0)_
+_Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Dependencies required 
 - [x] mpc
@@ -44,8 +44,9 @@ _Keybindings_
   - Document -> Libreoffice, etc.
   - Audio/Video -> Popcorntime, etc.
   - Chat client -> Skypeforlinux, etc.
-  - Email client -> Thunderbird/Earlybird 
-- Keybinded apps: alt + [1, ..., 0]
+  - Email client -> Thunderbird/Earlybird
+- Keybinded apps: Super + alt + [f,i,g,b,d,a,c,e]
+- Workspaces: Super + Shift + [1..9]
 
 _¹screenshots to ~/Screenshots_  
 

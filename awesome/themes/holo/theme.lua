@@ -91,7 +91,7 @@ theme.titlebar_maximized_button_normal_active   = theme.default_dir.."/titlebar/
 theme.titlebar_maximized_button_focus_active    = theme.default_dir.."/titlebar/maximized_focus_active.png"
 
 -- http://fontawesome.io/cheatsheet
-awful.util.tagnames = {" ", " ", " ", " ", " ", " ", " ", "", " " }
+awful.util.tagnames = {" ", " ", " ", " ", " ", " ", " ", " ", " " }
 
 theme.musicplr = string.format("%s -e ncmpcpp", awful.util.terminal)
 
@@ -207,8 +207,7 @@ theme.fs = lain.widget.fs({
 theme.volume = lain.widget.alsabar({
     notification_preset = { font = "Monospace 9"},
     timeout = 1,
-	ticks = true,
-    --togglechannel = "IEC958,3",
+    ticks = true,
     width = 80, height = 10, border_width = 0,
     colors = {
         background = "#383838",
@@ -245,14 +244,15 @@ local networkwidget = wibox.container.margin(netbg, 0, 0, 5, 5)
 
 -- Currency
 local temp_widget = wibox.widget{
-    font = "Monospace 9",
     widget = wibox.widget.textbox,
+    font = "Monospace 9",
 }
 
 currency_widget = wibox.widget {
     temp_widget,
     layout = wibox.layout.fixed.horizontal,
 }
+
 
 local currency_timer = timer({ timeout = 300 })
 local resp
@@ -261,14 +261,15 @@ currency_timer:connect_signal("timeout", function ()
    local resp_json = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
     if (resp_json ~= nil) then
         resp = json.decode(resp_json)
-        temp_widget:set_text("R$" .. resp.rates.BRL)
+        temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp.rates.BRL))
     end
 end)
 currency_timer:emit_signal("timeout")
 
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
-        text = "<b>A USD values " .. resp.rates.BRL .." BRL\nLast updated in: " .. resp.date .. " </b>",
+        font = "Monospace 9",
+        text = "USD: " .. resp.rates.BRL .." BRL\nUpdated in: " .. resp.date,
         timeout = 3, hover_timeout = 0.5,
         width = 200,
         position = "bottom_right",
