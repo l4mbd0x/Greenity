@@ -9,12 +9,12 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] scrot        
 - [x] dmenu        
 - [x] gears        
-- [x] i3lock       
 - [x] Roboto       
 - [x] ncmpcpp
 - [x] unclutter    
 - [x] luasocket
 - [x] FontAwesome  
+- [x] xscreensaver 
 _note1: to solve gears emerge pixbuf with X jpeg USE flags_
 
 ## Features
