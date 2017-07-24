@@ -13,6 +13,7 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] ncmpcpp
 - [x] unclutter    
 - [x] luasocket
+- [x] pulseaudio
 - [x] FontAwesome  
 - [x] xscreensaver 
 
