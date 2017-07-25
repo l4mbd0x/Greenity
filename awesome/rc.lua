@@ -350,11 +350,11 @@ globalkeys = awful.util.table.join(
 
     -- Widgets popups
     awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end),
-    awful.key({ altkey, }, "h", function () if beautiful.fs then beautiful.fs.show(7) end end),
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
+    awful.key({ altkey, }, "m", function () if beautiful.currency then beautiful.currency.show(7) end end),
 
-    -- I3lock lock screen change to xscreensaver
-    awful.key({}, "F12", function () awful.util.spawn("xscreensaver-command --nosplash --lock") end),
+    -- Xscreensaver lock screen
+    awful.key({}, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- ALSA volume control
     -- Increase
@@ -657,4 +657,7 @@ client.connect_signal("focus",
         end
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+--Autorun xscreensaver daemon
+awful.spawn.with_shell("xscreensaver -no-splash")
 -- }}}

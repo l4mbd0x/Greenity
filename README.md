@@ -55,10 +55,11 @@ _¹screenshots to ~/Screenshots_
 ## Way to use it
 Clone and copy awesome directory directly to your ~/.config/awesome  
 
-![Image 1](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
-![Image 2](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
-![Image 3](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
-![Image 4](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
+![Image 1](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
+![Image 2](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
+![Image 3](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
+![Image 4](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
+![Image 5](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
 
 
 

@@ -158,35 +158,39 @@ function () awful.spawn(theme.musicplr) end)))
 prev_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc prev")
-    --mpd.update()
+    theme.mpd.update()
 end)))
 next_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc next")
-    --mpd.update()
+    theme.mpd.update()
 end)))
 stop_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     play_pause_icon:set_image(theme.play)
     awful.spawn.with_shell("mpc stop")
-    --mpd.update()
+    theme.mpd.update()
 end)))
 play_pause_icon:buttons(awful.util.table.join(awful.button({}, 1,
 function ()
     awful.spawn.with_shell("mpc toggle")
-    --mpd.update()
+    theme.mpd.update()
 end)))
 
 -- Weather
 theme.weather = lain.widget.weather({
     city_id = 3459712, -- placeholder (London)
-
     notification_preset = { font = "Monospace 9", position = "bottom_right" },
     settings = function()
         units = math.floor(weather_now["main"]["temp"])
         widget:set_markup(" " .. markup.font(theme.font, units .. "°C") .. " ")
     end
 })
+--theme.weather.icon
+local weawidget_icon = wibox.container.background(theme.weather.icon, theme.bg_focus, gears.shape.rectangle)
+local weawidget = wibox.container.background(theme.weather.widget, theme.bg_focus, gears.shape.rectangle)
+weatherwidget_icon = wibox.container.margin(weawidget_icon, 0, 0, 5, 5)
+weatherwidget = wibox.container.margin(weawidget, 0, 0, 5, 5)
 
 -- Mem
 local memory = lain.widget.mem({
@@ -196,12 +200,6 @@ local memory = lain.widget.mem({
 })
 local memwidget = wibox.container.background(memory.widget, theme.bg_focus, gears.shape.rectangle)
 memorywidget = wibox.container.margin(memwidget, 0, 0, 5, 5)
-
---  fs
-theme.fs = lain.widget.fs({
-    options = "--exclude-type=tmpfs",
-    notification_preset = { bg = theme.bg_normal, font = "Monospace 9, " },
-})
 
 -- ALSA volume bar
 theme.volume = lain.widget.alsabar({
@@ -222,13 +220,12 @@ volumewidget = wibox.container.margin(volumewidget, 0, 0, 5, 5)
 
 -- Cpu
 local cpu_icon = wibox.widget.imagebox(theme.cpu)
-local cpu
 local cput = awful.widget.graph()
 cput:set_width(50)
 cput:set_background_color(theme.bg_focus)
 cput:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#2134B3"}, {0.5, "#178824"}, {1, "#19AF2B" }}})
 vicious.register(cput, vicious.widgets.cpu, "$1")
-cpu = wibox.container.margin(cput, 0, 0, 5, 5)
+local cpu = wibox.container.margin(cput, 0, 0, 5, 5)
 
 -- Net
 local netdown_icon = wibox.widget.imagebox(theme.net_down)
@@ -253,31 +250,33 @@ currency_widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
 }
 
-
 local currency_timer = timer({ timeout = 300 })
 local resp
 
 currency_timer:connect_signal("timeout", function ()
+   awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
    local resp_json = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
     if (resp_json ~= nil) then
         resp = json.decode(resp_json)
         temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp.rates.BRL))
     end
+   time = stdout
+   end)
 end)
 currency_timer:emit_signal("timeout")
 
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
-        text = "USD: " .. resp.rates.BRL .." BRL\nUpdated in: " .. resp.date,
+        text = "USD: " .. resp.rates.BRL .." BRL\nUpdated in: " .. resp.date .. " " .. time,
         timeout = 3, hover_timeout = 0.5,
-        width = 200,
+        width = 150,
+        height = 60,
         position = "bottom_right",
     }
 end)
 local currencybg = wibox.container.background(currency_widget, theme.bg_focus, gears.shape.rectangle)
 local currencywidget = wibox.container.margin(currencybg, 0, 0, 5, 5)
-
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.awesome_icon_launcher })
@@ -393,8 +392,8 @@ function theme.at_screen_connect(s)
             bottom_bar,
             currencywidget,
             bottom_bar,
-            theme.weather.icon,
-            theme.weather.widget,
+            weatherwidget_icon,
+            weatherwidget,
             bottom_bar,
             clock_icon,
             clockwidget,
