@@ -76,6 +76,7 @@ local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
 local torrent_editor = "transmission-qt"
 local mindmap_editor = "xmind"
+local key_manager    = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
 awful.util.terminal = terminal
 
@@ -384,6 +385,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey, "g" }, "2", function () awful.util.spawn_with_shell(gaming_2) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
+    -- Password manager
+    awful.key({ modkey, altkey }, "k", function () awful.spawn(key_manager) end),
+
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -399,7 +403,7 @@ globalkeys = awful.util.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"})
-    --]]
+--]]
 )
 
 clientkeys = awful.util.table.join(
@@ -570,6 +574,10 @@ awful.rules.rules = {
     -- Set Xmind to always map on the fourth tag on screen 1.
     { rule = { class = "XMind" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+
+    -- Set Encryptr to always map on the eighth tag on screen 1 and forces the switch to this very tag.
+    { rule = { name = "Encryptr" },
+      properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 }
 -- }}}
 

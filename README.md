@@ -44,6 +44,7 @@ _Keybindings_
   - Gaming apps -> Steam, etc.
   - Browser -> Firefox Aurora
   - Document -> Libreoffice, etc.
+  - Key_manager -> Encryptr, etc.
   - Audio/Video -> Popcorntime, etc.
   - Chat client -> Skypeforlinux, etc.
   - Email client -> Thunderbird/Earlybird
