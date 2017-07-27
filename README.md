@@ -44,8 +44,9 @@ _Keybindings_
   - Gaming apps -> Steam, etc.
   - Browser -> Firefox Aurora
   - Document -> Libreoffice, etc.
-  - Key_manager -> Encryptr, etc.
-  - Audio/Video -> Popcorntime, etc.
+  - Key manager -> Encryptr, etc.
+  - Stream man  -> Stremio, etc.
+  - Audio/Video -> mpv, etc.
   - Chat client -> Skypeforlinux, etc.
   - Email client -> Thunderbird/Earlybird
 - Keybinded apps: Super + alt + [f,i,g,b,d,a,c,e]

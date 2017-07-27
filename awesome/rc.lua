@@ -66,7 +66,7 @@ local gaming_1       = "STEAM_RUNTIME=1 steam"
 local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer     = "okular"
-local stream_plat    = "popcorntime-bin"
+local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
 local image_editor   = "gimp"
 local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
@@ -578,6 +578,10 @@ awful.rules.rules = {
     -- Set Encryptr to always map on the eighth tag on screen 1 and forces the switch to this very tag.
     { rule = { name = "Encryptr" },
       properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+    -- Set Stremio to always map on the eighth tag on screen 1.
+    { rule = { name = "Stremio" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 }
 -- }}}
 
