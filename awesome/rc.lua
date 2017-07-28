@@ -78,7 +78,7 @@ local torrent_editor = "transmission-qt"
 local mindmap_editor = "xmind"
 local pass_manager    = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
-local virt_manager   = "qt5-virt-manager"
+local virt_manager   = "aqemu"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -604,8 +604,8 @@ awful.rules.rules = {
     { rule = { name = "Stremio" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
-    -- Set Qt virt manager to always map on the eighth tag on screen 1.
-    { rule = { name = "Qt VirtManager" },
+    -- Set AQEMU to always map on the eighth tag on screen 1.
+    { rule = { name = "AQEMU" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 }
 -- }}}
