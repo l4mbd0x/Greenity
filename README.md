@@ -46,6 +46,7 @@ _Keybindings_
   - Document -> Libreoffice, etc.
   - Key manager -> Encryptr, etc.
   - Stream man  -> Stremio, etc.
+  - Virt man    -> Qt-VirtManager, etc.
   - Audio/Video -> mpv, etc.
   - Chat client -> Skypeforlinux, etc.
   - Email client -> Thunderbird/Earlybird

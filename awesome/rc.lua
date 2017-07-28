@@ -9,7 +9,6 @@ local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
 local lain          = require("lain")
---local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 --treetile tiling style
@@ -55,6 +54,7 @@ run_once({ "urxvtd", "unclutter -root" })
 -- {{{ Variable definitions
 local modkey         = "Mod4"
 local altkey         = "Mod1"
+local leftshiftkey   = "Shift"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
 
@@ -76,17 +76,36 @@ local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
 local torrent_editor = "transmission-qt"
 local mindmap_editor = "xmind"
-local key_manager    = "urxvtc -e Encryptr"
+local pass_manager    = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
-awful.util.terminal = terminal
+local virt_manager   = "qt5-virt-manager"
+awful.util.terminal  = terminal
 
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
+    awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    --awful.layout.suit.fair,
+    --awful.layout.suit.fair.horizontal,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.max,
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier,
+    --awful.layout.suit.corner.nw,
+    --awful.layout.suit.corner.ne,
+    --awful.layout.suit.corner.sw,
+    --awful.layout.suit.corner.se,
+    lain.layout.cascade,
+    --lain.layout.cascade.tile,
+    --lain.layout.centerwork,
+    --lain.layout.centerwork.horizontal,
+    lain.layout.termfair,
+    --lain.layout.termfair.center,
     lain.layout.centerwork,
-    treetile
+    treetile,
 }
 awful.util.taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -381,13 +400,14 @@ globalkeys = awful.util.table.join(
     -- Social
     awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
     -- Gaming
-    awful.key({ modkey, altkey, "g" }, "1", function () awful.util.spawn_with_shell(gaming_1) end),
-    awful.key({ modkey, altkey, "g" }, "2", function () awful.util.spawn_with_shell(gaming_2) end),
+    awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
+    awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
     -- Password manager
-    awful.key({ modkey, altkey }, "k", function () awful.spawn(key_manager) end),
-
+    awful.key({ modkey, altkey, leftshiftkey }, "p", function () awful.spawn(pass_manager) end),
+    -- Virtualization
+    awful.key({ modkey, altkey, leftshiftkey }, "v", function () awful.spawn(virt_manager) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -507,6 +527,7 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
+                     --treetile.focusnew = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
@@ -581,6 +602,10 @@ awful.rules.rules = {
 
     -- Set Stremio to always map on the eighth tag on screen 1.
     { rule = { name = "Stremio" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+    -- Set Qt virt manager to always map on the eighth tag on screen 1.
+    { rule = { name = "Qt VirtManager" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 }
 -- }}}
