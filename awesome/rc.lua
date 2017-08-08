@@ -79,6 +79,7 @@ local mindmap_editor = "xmind"
 local pass_manager    = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
 local virt_manager   = "aqemu"
+local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -408,6 +409,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey, leftshiftkey }, "p", function () awful.spawn(pass_manager) end),
     -- Virtualization
     awful.key({ modkey, altkey, leftshiftkey }, "v", function () awful.spawn(virt_manager) end),
+    -- Academic References
+    awful.key({ modkey, altkey}, "a", function () awful.spawn(acad_ref_man) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -615,6 +618,10 @@ awful.rules.rules = {
     -- Set mpv to always map to the eighth tag of screen 1 and switch to this very tag
     { rule = { name = "mpv" },
       properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+    -- Set Zotero to always map to the eighth tag of screen 1
+    { rule = { name = "Zotero" },
+      properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 }
 -- }}}
 
