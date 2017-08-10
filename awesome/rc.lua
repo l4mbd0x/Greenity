@@ -80,6 +80,7 @@ local pass_manager    = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
 local virt_manager   = "aqemu"
 local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
+local android_dev    = "android-studio"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -411,6 +412,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey, leftshiftkey }, "v", function () awful.spawn(virt_manager) end),
     -- Academic References
     awful.key({ modkey, altkey}, "a", function () awful.spawn(acad_ref_man) end),
+    -- Android development
+    awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(android_dev) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -622,6 +625,10 @@ awful.rules.rules = {
     -- Set Zotero to always map to the eighth tag of screen 1
     { rule = { name = "Zotero" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+    -- Set Android Studio to always map to third tag of screen 1
+    { rule = { class = "jetbrains-studio" },
+      properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 }
 -- }}}
 

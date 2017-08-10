@@ -50,6 +50,8 @@ _Keybindings_
   - Audio/Video -> mpv, etc.
   - Chat client -> Skypeforlinux, etc.
   - Email client -> Thunderbird/Earlybird
+  - Academic -> Zotero
+  - Development -> Android Studio
 - Keybinded apps: Super + alt + [f,i,g,b,d,a,c,e]
 - Workspaces: Super + Shift + [1..9]
 
