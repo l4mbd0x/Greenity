@@ -286,8 +286,7 @@ currency_widget:connect_signal("mouse::enter", function()
         timeout = 5, hover_timeout = 0.5,
         icon = theme.currency,
         icon_size = 100,
-        width = 380,
-        --height = 60,
+        width = 345,
         position = "bottom_right",
     }
 end)
