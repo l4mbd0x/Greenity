@@ -11,6 +11,17 @@ local json    = require("json")
 local naughty = require("naughty")
 
 local theme                                     = {}
+--layouts
+theme.treetile_icon                             = os.getenv("HOME") .. "/.config/awesome/treetile/"
+theme.lain_icons                                = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
+theme.layout_termfair    = theme.lain_icons .. "termfair.png"
+theme.layout_centerfair  = theme.lain_icons .. "centerfair.png"  -- termfair.center
+theme.layout_cascade     = theme.lain_icons .. "cascade.png"
+theme.layout_cascadetile = theme.lain_icons .. "cascadetile.png" -- cascade.tile
+theme.layout_centerwork  = theme.lain_icons .. "centerwork.png"
+theme.layout_centerhwork = theme.lain_icons .. "centerworkh.png" -- centerwork.horizontal
+theme.layout_treetile = theme.treetile_icon .. "treetile.png"
+--end layouts
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
@@ -46,6 +57,7 @@ theme.mpdl                                      = theme.icon_dir .. "/mpd.png"
 theme.mpd_on                                    = theme.icon_dir .. "/mpd_on.png"
 theme.prev                                      = theme.icon_dir .. "/prev.png"
 theme.nex                                       = theme.icon_dir .. "/next.png"
+theme.currency                                  = theme.icon_dir .. "/curr.png"
 theme.stop                                      = theme.icon_dir .. "/stop.png"
 theme.pause                                     = theme.icon_dir .. "/pause.png"
 theme.play                                      = theme.icon_dir .. "/play.png"
@@ -250,6 +262,7 @@ currency_widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
 }
 
+
 local currency_timer = timer({ timeout = 300 })
 local resp
 
@@ -263,15 +276,18 @@ currency_timer:connect_signal("timeout", function ()
    time = stdout
    end)
 end)
+currency_timer:start()
 currency_timer:emit_signal("timeout")
 
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
         text = "USD: " .. resp.rates.BRL .." BRL\nUpdated in: " .. resp.date .. " " .. time,
-        timeout = 3, hover_timeout = 0.5,
-        width = 150,
-        height = 60,
+        timeout = 5, hover_timeout = 0.5,
+        icon = theme.currency,
+        icon_size = 100,
+        width = 380,
+        --height = 60,
         position = "bottom_right",
     }
 end)
