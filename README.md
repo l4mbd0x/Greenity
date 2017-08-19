@@ -1,4 +1,4 @@
-# Awesome-wm-Funtoo-GreenInfinity
+# Funtoo-GreenInfinity
 _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Dependencies required 
