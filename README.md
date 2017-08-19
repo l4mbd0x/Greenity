@@ -21,7 +21,7 @@ _note1: to solve gears emerge pixbuf with X jpeg USE flags_
 
 ## Features
 _Others_
-- Binary Tree tiling style layout 
+- Binary Tree tiling layout 
 
 _Widgets_ 
 - [x] RAM text                      
