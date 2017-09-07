@@ -62,8 +62,8 @@ local browser        = "firefox"
 -- Add to buffer: select data & Ctrl+Ins
 -- Ctrl+Alt+V
 local terminal       = "urxvtc" or "xterm"
-local gaming_1       = "STEAM_RUNTIME=1 steam"
-local gaming_2       = "playonlinux"
+--local gaming_1       = "STEAM_RUNTIME=1 steam"
+--local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer     = "okular"
 local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
@@ -74,13 +74,14 @@ local email_client   = "thunderbird"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
-local torrent_editor = "transmission-qt"
+local torrent_client = "transmission-qt"
 local mindmap_editor = "xmind"
-local pass_manager    = "urxvtc -e Encryptr"
+local pass_manager   = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
 local virt_manager   = "aqemu"
 local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
 local android_dev    = "android-studio"
+local irc_client     = "urxvtc -e irssi"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -373,7 +374,7 @@ globalkeys = awful.util.table.join(
     -- Widgets popups
     awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end),
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
-    awful.key({ altkey, }, "m", function () if beautiful.currency then beautiful.currency.show(7) end end),
+    awful.key({ altkey, }, "m", function () if beautiful.currency_widget then beautiful.currency_widget.show(7) end end),
 
     -- Xscreensaver lock screen
     awful.key({}, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
@@ -402,8 +403,8 @@ globalkeys = awful.util.table.join(
     -- Social
     awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
     -- Gaming
-    awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
-    awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
+   -- awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
+   -- awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
     -- Password manager
@@ -414,6 +415,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey}, "a", function () awful.spawn(acad_ref_man) end),
     -- Android development
     awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(android_dev) end),
+    -- IRC Client
+    awful.key({ modkey, altkey, leftshiftkey }, "c", function () awful.spawn(irc_client) end),
+
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -629,6 +633,13 @@ awful.rules.rules = {
     -- Set Android Studio to always map to third tag of screen 1
     { rule = { class = "jetbrains-studio" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+
+    -- Set IRSSI to always map to the seventh tag of screen 1
+    { rule = { name = "irssi" },
+      properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
+
+
+
 }
 -- }}}
 
