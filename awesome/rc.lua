@@ -81,7 +81,7 @@ local chat_client    = "skypeforlinux"
 local virt_manager   = "aqemu"
 local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
 local android_dev    = "android-studio"
-local irc_client     = "urxvtc -e irssi"
+local irc_client     = "urxvtc -e proxychains irssi -n lambd0x"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -579,7 +579,7 @@ awful.rules.rules = {
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Kile to always map on the third tag on screen 1.
-    { rule = { class = "Kile" },
+    { rule = { name = "Kile" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
     -- Set Steam to always map on the ninth tag on screen 1.
@@ -634,8 +634,8 @@ awful.rules.rules = {
     { rule = { class = "jetbrains-studio" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
-    -- Set IRSSI to always map to the seventh tag of screen 1
-    { rule = { name = "irssi" },
+    -- Set irssi/Proxychains to always map to the seventh tag of screen 1
+    { rule = { name = "proxychains" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
 
 
