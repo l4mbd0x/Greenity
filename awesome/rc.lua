@@ -614,13 +614,9 @@ awful.rules.rules = {
     { rule = { name = "Stremio" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
-    -- Set AQEMU to always map to the eighth tag of screen 1.
-    { rule = { name = "AQEMU" },
-      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
-
     -- Set feh to always map to the third tag of screen 1 and switch to this very tag
     { rule = { name = "feh" },
-      properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+      properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set mpv to always map to the eighth tag of screen 1 and switch to this very tag
     { rule = { name = "mpv" },
