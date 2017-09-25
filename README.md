@@ -21,7 +21,7 @@ _note1: to solve gears emerge pixbuf with X jpeg USE flags_
 
 ## Features
 _Others_
-- Binary Tree tiling layout 
+- Binary Tree layout 
 
 _Widgets_ 
 - [x] RAM text                      
@@ -57,14 +57,23 @@ _Keybindings_
 
 _¹screenshots to ~/Screenshots_  
 
+Redesigned icons for better looking with Awesome 4.2 (size and colors)
+- Lain icon layout
+  - cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
+  - cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
+  - centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
+  - termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
+- Binary tree layout (treetile)
+  - treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
+
 ## Way to use it
 Clone and copy awesome directory directly to your ~/.config/awesome  
 
-![Image 1](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
-![Image 2](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
-![Image 3](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
-![Image 4](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
-![Image 5](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
+![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
+![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
+![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
+![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
+![Image 10](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
 
 
 
