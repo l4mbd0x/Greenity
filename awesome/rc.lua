@@ -82,6 +82,7 @@ local virt_manager   = "aqemu"
 local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
 local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e proxychains irssi -n lambd0x"
+local remote_client  = "anydesk"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -417,7 +418,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(android_dev) end),
     -- IRC Client
     awful.key({ modkey, altkey, leftshiftkey }, "c", function () awful.spawn(irc_client) end),
-
+    -- Remote Access
+    awful.key({ modkey, altkey, leftshiftkey }, "r", function () awful.spawn(remote_client) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -634,7 +636,9 @@ awful.rules.rules = {
     { rule = { name = "proxychains" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
 
-
+    -- Set Anydesk to always map to the eighth tag of screen 1
+    { rule = { name = "AnyDesk" },
+      properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
 }
 -- }}}
