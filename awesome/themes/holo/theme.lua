@@ -236,7 +236,7 @@ local cput = awful.widget.graph()
 cput:set_width(50)
 cput:set_background_color(theme.bg_focus)
 cput:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#2134B3"}, {0.5, "#178824"}, {1, "#19AF2B" }}})
-vicious.register(cput, vicious.widgets.cpu, "$1")
+vicious.register(cput, vicious.widgets.cpu, "$1", 3)
 local cpu = wibox.container.margin(cput, 0, 0, 5, 5)
 
 -- Net
@@ -268,11 +268,17 @@ local resp
 
 currency_timer:connect_signal("timeout", function ()
    awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
-   local resp_json = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
-    if (resp_json ~= nil) then
-        resp = json.decode(resp_json)
-        temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp.rates.BRL))
-    end
+   local resp_json_1 = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
+   if (resp_json_1 ~= nil) then
+       resp_1 = json.decode(resp_json_1)
+       temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp_1.rates.BRL))
+   end
+
+   local resp_json_2 = http.request("http://api.fixer.io/latest?base=EUR;symbols=BRL")
+   if (resp_json_2 ~= nil) then
+       resp_2 = json.decode(resp_json_2)
+   end
+
    time = stdout
    end)
 end)
@@ -282,7 +288,9 @@ currency_timer:emit_signal("timeout")
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
-        text = "USD: " .. resp.rates.BRL .." BRL\nUpdated in: " .. resp.date .. " " .. time,
+        text = "USD: " .. resp_1.rates.BRL .. " BRL\n" ..
+               "EUR: " .. resp_2.rates.BRL .. " BRL\n" ..
+               "Updated in: " .. resp_2.date .. " " .. time,
         timeout = 5, hover_timeout = 0.5,
         icon = theme.currency,
         icon_size = 100,
