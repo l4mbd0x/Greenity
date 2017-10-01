@@ -73,7 +73,7 @@ Clone and copy awesome directory directly to your ~/.config/awesome
 ![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
 ![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
 ![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
-![Image 10](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
+![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/master/screenshots_taken/img4.png)
 
 
 
