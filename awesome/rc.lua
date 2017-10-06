@@ -81,7 +81,7 @@ local chat_client    = "skypeforlinux"
 local virt_manager   = "aqemu"
 local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
 local android_dev    = "android-studio"
-local irc_client     = "urxvtc -e proxychains irssi -n lambd0x"
+local irc_client     = "urxvtc -e irssi"
 local remote_client  = "anydesk"
 awful.util.terminal  = terminal
 
