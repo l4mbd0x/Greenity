@@ -632,8 +632,8 @@ awful.rules.rules = {
     { rule = { class = "jetbrains-studio" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
-    -- Set irssi/Proxychains to always map to the seventh tag of screen 1
-    { rule = { name = "proxychains" },
+    -- Set irssi to always map to the seventh tag of screen 1
+    { rule = { name = "irssi" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
 
     -- Set Anydesk to always map to the eighth tag of screen 1
