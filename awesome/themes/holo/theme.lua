@@ -268,15 +268,10 @@ local resp
 
 currency_timer:connect_signal("timeout", function ()
    awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
-   local resp_json_1 = http.request("http://api.fixer.io/latest?base=USD;symbols=BRL")
+   local resp_json_1 = http.request("https://api.fixer.io/latest?base=USD;symbols=BRL")
    if (resp_json_1 ~= nil) then
        resp_1 = json.decode(resp_json_1)
        temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp_1.rates.BRL))
-   end
-
-   local resp_json_2 = http.request("http://api.fixer.io/latest?base=EUR;symbols=BRL")
-   if (resp_json_2 ~= nil) then
-       resp_2 = json.decode(resp_json_2)
    end
 
    time = stdout
@@ -289,8 +284,7 @@ currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
         text = "USD: " .. resp_1.rates.BRL .. " BRL\n" ..
-               "EUR: " .. resp_2.rates.BRL .. " BRL\n" ..
-               "Updated in: " .. resp_2.date .. " " .. time,
+               "Updated in: " .. resp_1.date .. " " .. time,
         timeout = 5, hover_timeout = 0.5,
         icon = theme.currency,
         icon_size = 100,
