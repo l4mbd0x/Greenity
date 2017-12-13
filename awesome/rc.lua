@@ -61,7 +61,7 @@ local browser        = "firefox"
 --Urxvt users
 -- Add to buffer: select data & Ctrl+Ins
 -- Ctrl+Alt+V
-local terminal       = "urxvtc" or "xterm"
+local terminal       = "urxvtc" 
 --local gaming_1       = "STEAM_RUNTIME=1 steam"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
@@ -378,7 +378,10 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, }, "m", function () if beautiful.currency_widget then beautiful.currency_widget.show(7) end end),
 
     -- Xscreensaver lock screen
-    awful.key({}, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    --awful.key({}, "F11", function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- Xautolock/I3lock lock screen
+    awful.key({ }, "F12", function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock.sh") end),
 
     -- ALSA volume control
     -- Increase
