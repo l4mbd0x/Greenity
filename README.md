@@ -9,6 +9,7 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] scrot        
 - [x] dmenu        
 - [x] Roboto       
+- [x] i3lock
 - [x] ncmpcpp
 - [x] unclutter    
 - [x] luasocket
