@@ -1,6 +1,9 @@
 # Funtoo-GreenInfinity
 _Awesome WM config file based on the Holo Theme (v4.2)_
 
+## Mandatory deps
+- [x] luasocket
+
 ## Dependencies required 
 - [x] mpc
 - [x] mpd
@@ -12,7 +15,7 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] i3lock
 - [x] ncmpcpp
 - [x] unclutter    
-- [x] luasocket
+- [x] consolekit
 - [x] FontAwesome  
 
 ## Features
