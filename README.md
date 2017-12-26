@@ -1,4 +1,4 @@
-# Funtoo-GreenInfinity
+# Greenity
 _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Mandatory deps
