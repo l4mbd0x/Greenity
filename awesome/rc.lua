@@ -592,7 +592,7 @@ awful.rules.rules = {
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[9] } },
 
      -- Set Skype for Linux to always map on the seventh tag on screen 1.
-    { rule = { class = "skypeforlinux" },
+    { rule = { name = "Skype" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
 
     -- Set Telegram to always map on the seventh tag on screen 1.
