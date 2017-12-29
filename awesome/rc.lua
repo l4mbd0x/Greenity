@@ -62,35 +62,35 @@ local browser        = "firefox"
 -- Add to buffer: select data & Ctrl+Ins
 -- Ctrl+Alt+V
 local terminal       = "urxvtc" 
---local gaming_1       = "STEAM_RUNTIME=1 steam"
+local gaming_1       = "STEAM_RUNTIME=1 steam"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer     = "okular"
-local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
+--local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
 local image_editor   = "gimp"
-local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
+--local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
 local email_client   = "thunderbird"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
-local torrent_client = "transmission-qt"
-local mindmap_editor = "xmind"
+--local torrent_client = "transmission-qt"
+local mindmap_editor = "XMind"
 local pass_manager   = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
-local virt_manager   = "aqemu"
-local acad_ref_man   = ".Zotero_linux-x86_64/zotero"
-local android_dev    = "android-studio"
-local irc_client     = "urxvtc -e irssi"
-local remote_client  = "anydesk"
+--local virt_manager   = "aqemu"
+local acad_ref_man   = "zotero"
+--local android_dev    = "android-studio"
+--local irc_client     = "urxvtc -e irssi"
+--local remote_client  = "anydesk"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.floating,
+    --awful.layout.suit.tile,
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
@@ -102,13 +102,13 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
-    lain.layout.cascade,
+    --lain.layout.cascade,
     --lain.layout.cascade.tile,
     --lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
-    lain.layout.termfair,
+    --lain.layout.termfair,
     --lain.layout.termfair.center,
-    lain.layout.centerwork,
+    --lain.layout.centerwork,
     treetile,
 }
 awful.util.taglist_buttons = awful.util.table.join(
@@ -407,8 +407,8 @@ globalkeys = awful.util.table.join(
     -- Social
     awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
     -- Gaming
-   -- awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
-   -- awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
+    awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
+    --awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
     -- Password manager
