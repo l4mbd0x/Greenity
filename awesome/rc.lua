@@ -58,10 +58,11 @@ local leftshiftkey   = "Shift"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
 
+
 --Urxvt users
 -- Add to buffer: select data & Ctrl+Ins
 -- Ctrl+Alt+V
-local terminal       = "urxvtc" 
+local terminal       = "urxvtc"
 local gaming_1       = "STEAM_RUNTIME=1 steam"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
@@ -78,11 +79,11 @@ local office_editor  = "libreoffice"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
---local virt_manager   = "aqemu"
+--local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
 --local android_dev    = "android-studio"
---local irc_client     = "urxvtc -e irssi"
---local remote_client  = "anydesk"
+local irc_client     = "urxvtc -e irssi"
+local remote_client  = "anydesk"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -234,6 +235,12 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+
+    -- Treetile vertical/horizontal split control
+    awful.key({ modkey }, "h", treetile.vertical),
+    awful.key({ modkey }, "v", treetile.horizontal),
+
+
     -- Scrot screenshot
      awful.key({ }, "Print", function () awful.util.spawn_with_shell(screenshot) end),
 
@@ -380,7 +387,7 @@ globalkeys = awful.util.table.join(
     -- Xscreensaver lock screen
     --awful.key({}, "F11", function () awful.util.spawn("xscreensaver-command -lock") end),
 
-    -- Xautolock/I3lock lock screen
+    -- I3lock lock screen
     awful.key({ }, "F12", function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock.sh") end),
 
     -- ALSA volume control
@@ -422,7 +429,7 @@ globalkeys = awful.util.table.join(
     -- IRC Client
     awful.key({ modkey, altkey, leftshiftkey }, "c", function () awful.spawn(irc_client) end),
     -- Remote Access
-    awful.key({ modkey, altkey, leftshiftkey }, "r", function () awful.spawn(remote_client) end),
+    awful.key({ modkey, altkey}, "r", function () awful.spawn(remote_client) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -542,7 +549,6 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
-                     --treetile.focusnew = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,

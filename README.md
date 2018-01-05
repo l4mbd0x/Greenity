@@ -20,37 +20,54 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Features
 _Others_
-- Binary Tree layout 
+- Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile)
 
-_Widgets_ 
-- [x] RAM text                      
-- [x] CPU graph                     
-- [x] MPD control
-- [x] Currency text
-- [x] Volume display                
-- [x] Download/Upload text          
-- [x] Weather display toolkit text  
-- [x] time/date/calendar toolkit text        
+_Widgets_
+| Description                         | Credits                                                                                 |
+| :---:                               | :---:                                                                                   |
+| RAM text                            | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
+- [x] CPU graph                       | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
+- [x] MPD control                     | [Copycat's Holo theme theme widget](https://github.com/lcpz/awesome-copycats)           |
+- [x] Currency text                   | Personnal creation                                                                      |
+- [x] Volume display                  | [Personnal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/)  |
+- [x] Download/Upload text            | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
+- [x] Weather display toolkit text    | [lain](https://github.com/lcpz/lain/wiki)                                               |
+- [x] time/date/calendar toolkit text | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
 
-_Keybindings_ 
+_Keybindings_
 - Block screen: F12
 - Printscreen¹ PrtSc 
 - Increase volume: F3 
 - Decrease volume: F2 
-- Specific application to tags controlled by keybinded apps
-  - File manager -> Dolphin
-  - Image editor -> Gimp, etc.
-  - Gaming apps -> Steam, etc.
-  - Browser -> Firefox Aurora
-  - Document -> Libreoffice, etc.
-  - Key manager -> Encryptr, etc.
-  - Stream man  -> Stremio, etc.
-  - Virt man    -> Aqemu, etc.
-  - Audio/Video -> mpv, etc.
-  - Chat client -> Skypeforlinux, etc.
-  - Email client -> Thunderbird/Earlybird
-  - Academic -> Zotero
-  - Development -> Android Studio
+- Treetile vertical split set: Super + v
+- Treetile horizontal split set: Super + h
+
+- Specific application to tags
+| App category         | Application    | Keybinding |
+| :---:                | :---:          | :---:      |
+| File manager         |  Dolphin       | Super + Left_Alt + f  |
+| Image editor         | Gimp           | Super + Left_Alt + i  |
+| Vector editor        | Inkscape       | Super + Left_Alt + v  |
+| Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v |
+| Gaming apps          | Steam          | Super + Left_Alt + g  |
+| Browser              | Firefox Aurora | Super + Left_Alt + b  |
+| Office suite         | Libreoffice    | Super + Left_Alt + o  |
+| Pdf viewer           | Okular         | Super + Left_Alt + p  |
+| Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p |
+| Video Streamming Hub | Stremio        | Super + Left_Alt + s  |
+| Chat client          | Skypeforlinux  | Super + Left_Alt + c  |
+| IRC client           | Irssi          | Super + Left_Alt + Left_Shift + c |
+| Email client         | Earlybird      | Super + Left_Alt + e  |
+| Academic client      | Zotero         | Super + Left_Alt + a  |
+| Android Dev          | Android Studio | Super + Left_Alt + Left_Shift + a |
+| LaTeX editor         | Kile           | Super + Left_Alt + l  |
+| Mindmap editor       | Xmind          | Super + Left_Alt + m  |
+| Remote access        | Anydesk        | Super + Left_Alt + r  |
+| Audio control UP     | Awesome widget | F3                    |
+| Audio control Down   | Awesome widget | F2                    |
+| Screenshot app       | scrot          | PrtSc                 |
+| Lock screen app      | i3lock         | F12                   |
+
 - Keybinded apps: Super + alt + [f,i,g,b,d,a,c,e]
 - Workspaces: Super + Shift + [1..9]
 
