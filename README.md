@@ -45,30 +45,30 @@ _Keybindings_
 
 - Specific application to tags:
 
-| App category         | Application    | Keybinding            |
-| :-------------------:| :------------: | :--------------------: |
-| File manager         |  Dolphin       | Super + Left_Alt + f  |
-| Image editor         | Gimp           | Super + Left_Alt + i  |
-| Vector editor        | Inkscape       | Super + Left_Alt + v  |
+| App category         | Application    | Keybinding            | Tag |
+| :-------------------:| :------------: | :--------------------: | :---: |
+| File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
+| Image editor         | Gimp           | Super + Left_Alt + i  | 4 |
+| Vector editor        | Inkscape       | Super + Left_Alt + v  | 4 |
 | Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v |
-| Gaming apps          | Steam          | Super + Left_Alt + g  |
-| Browser              | Firefox Aurora | Super + Left_Alt + b  |
-| Office suite         | Libreoffice    | Super + Left_Alt + o  |
-| Pdf viewer           | Okular         | Super + Left_Alt + p  |
-| Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p |
-| Video Streamming Hub | Stremio        | Super + Left_Alt + s  |
-| Chat client          | Skypeforlinux  | Super + Left_Alt + c  |
-| IRC client           | Irssi          | Super + Left_Alt + Left_Shift + c |
-| Email client         | Earlybird      | Super + Left_Alt + e  |
-| Academic client      | Zotero         | Super + Left_Alt + a  |
-| Android Dev          | Android Studio | Super + Left_Alt + Left_Shift + a |
-| LaTeX editor         | Kile           | Super + Left_Alt + l  |
-| Mindmap editor       | Xmind          | Super + Left_Alt + m  |
-| Remote access        | Anydesk        | Super + Left_Alt + r  |
-| Audio control UP     | Awesome widget | F3                    |
-| Audio control Down   | Awesome widget | F2                    |
-| Screenshot¹ app      | scrot          | PrtSc                 |
-| Lock screen app      | i3lock         | F12                   |
+| Gaming apps          | Steam          | Super + Left_Alt + g  | 9 |
+| Browser              | Firefox Aurora | Super + Left_Alt + b  | 1 |
+| Office suite         | Libreoffice    | Super + Left_Alt + o  | 3 |
+| Pdf viewer           | Okular         | Super + Left_Alt + p  | 5 |
+| Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p | 4|
+| Video Streamming Hub | Stremio        | Super + Left_Alt + s  | 8 |
+| Chat client          | Skypeforlinux  | Super + Left_Alt + c  | 7 |
+| IRC client           | Irssi          | Super + Left_Alt + Left_Shift + c | 7|
+| Email client         | Earlybird      | Super + Left_Alt + e  | 6 |
+| Academic client      | Zotero         | Super + Left_Alt + a  | 3 |
+| Android Dev          | Android Studio | Super + Left_Alt + Left_Shift + a | 2 |
+| LaTeX editor         | Kile           | Super + Left_Alt + l  | 3 |
+| Mindmap editor       | Xmind          | Super + Left_Alt + m  | 4 |
+| Remote access        | Anydesk        | Super + Left_Alt + r  | 8 |
+| Audio control UP     | Awesome widget | F3                    | none |
+| Audio control Down   | Awesome widget | F2                    | none |
+| Screenshot¹ app      | scrot          | PrtSc                 | none |
+| Lock screen app      | i3lock         | F12                   | none |
 
 - Workspaces: Super + Shift + [1..9]
 

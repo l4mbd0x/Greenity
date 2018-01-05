@@ -587,7 +587,7 @@ awful.rules.rules = {
 
     -- Set Okular PDF file viewer to always map on the fourth tag on screen 1.
     { rule = { class = "okular" },
-      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
     -- Set Kile to always map on the third tag on screen 1.
     { rule = { name = "Kile" },
@@ -615,7 +615,7 @@ awful.rules.rules = {
 
     -- Set Xmind to always map on the fourth tag on screen 1.
     { rule = { class = "XMind" },
-      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Encryptr to always map to the eighth tag of screen 1 and switch to this very tag.
     { rule = { name = "Encryptr" },
