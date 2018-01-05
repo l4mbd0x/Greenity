@@ -20,7 +20,7 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Features
 _Others_
-- Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile)
+- Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile))
 
 _Widgets_
 
