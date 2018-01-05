@@ -67,10 +67,9 @@ _Keybindings_
 | Remote access        | Anydesk        | Super + Left_Alt + r  |
 | Audio control UP     | Awesome widget | F3                    |
 | Audio control Down   | Awesome widget | F2                    |
-| Screenshot app       | scrot          | PrtSc                 |
+| Screenshot¹ app      | scrot          | PrtSc                 |
 | Lock screen app      | i3lock         | F12                   |
 
-- Keybinded apps: Super + alt + [f,i,g,b,d,a,c,e]
 - Workspaces: Super + Shift + [1..9]
 
 _¹screenshots to ~/Screenshots_  
@@ -81,7 +80,7 @@ Redesigned icons for better looking with Awesome 4.2 (size and colors)
   - cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
   - centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
   - termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
-- Binary tree layout (treetile)
+- Binary tree icon layout (treetile)
   - treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
 
 ## Way to use it
