@@ -43,7 +43,8 @@ _Keybindings_
 - Treetile vertical split set: Super + v
 - Treetile horizontal split set: Super + h
 
-- Specific application to tags
+- Specific application to tags:
+
 | App category         | Application    | Keybinding            |
 | :-------------------:| :------------: | :--------------------: |
 | File manager         |  Dolphin       | Super + Left_Alt + f  |
