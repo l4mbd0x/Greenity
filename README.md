@@ -26,13 +26,13 @@ _Widgets_
 | Description                         | Credits                                                                                 |
 | :---:                               | :---:                                                                                   |
 | RAM text                            | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
-- [x] CPU graph                       | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
-- [x] MPD control                     | [Copycat's Holo theme theme widget](https://github.com/lcpz/awesome-copycats)           |
-- [x] Currency text                   | Personnal creation                                                                      |
-- [x] Volume display                  | [Personnal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/)  |
-- [x] Download/Upload text            | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
-- [x] Weather display toolkit text    | [lain](https://github.com/lcpz/lain/wiki)                                               |
-- [x] time/date/calendar toolkit text | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
+| CPU graph                           | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
+| MPD control                         | [Copycat's Holo theme theme widget](https://github.com/lcpz/awesome-copycats)           |
+| Currency text                       | Personnal creation                                                                      |
+| Volume display                      | [Personnal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/)  |
+| Download/Upload text                | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
+| Weather display toolkit text        | [lain](https://github.com/lcpz/lain/wiki)                                               |
+| time/date/calendar toolkit text     | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                 |
 
 _Keybindings_
 - Block screen: F12
@@ -43,8 +43,8 @@ _Keybindings_
 - Treetile horizontal split set: Super + h
 
 - Specific application to tags
-| App category         | Application    | Keybinding |
-| :---:                | :---:          | :---:      |
+| App category         | Application    | Keybinding            |
+| :---:                | :---:          | :---:                 |
 | File manager         |  Dolphin       | Super + Left_Alt + f  |
 | Image editor         | Gimp           | Super + Left_Alt + i  |
 | Vector editor        | Inkscape       | Super + Left_Alt + v  |
