@@ -50,7 +50,7 @@ _Keybindings_
 | File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
 | Image editor         | Gimp           | Super + Left_Alt + i  | 4 |
 | Vector editor        | Inkscape       | Super + Left_Alt + v  | 4 |
-| Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v |
+| Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v | 8 |
 | Gaming apps          | Steam          | Super + Left_Alt + g  | 9 |
 | Browser              | Firefox Aurora | Super + Left_Alt + b  | 1 |
 | Office suite         | Libreoffice    | Super + Left_Alt + o  | 3 |
