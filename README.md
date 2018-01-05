@@ -24,7 +24,7 @@ _Others_
 
 _Widgets_
  | Description                      | Credits                                                                                |
- | -------------------------------- | -------------------------------------------------------------------------------------- |
+ | :---: | :---: |
  | RAM text                         | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | CPU graph                        | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | MPD control                      | [Copycat's Holo theme theme widget](https://github.com/lcpz/awesome-copycats)          |
