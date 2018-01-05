@@ -23,7 +23,7 @@ _Others_
 - Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile)
 
 _Widgets_
- | Description                      | Credits                                                                                |
+ | Description | Credits |
  | :---: | :---: |
  | RAM text                         | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | CPU graph                        | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
