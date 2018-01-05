@@ -24,7 +24,7 @@ _Others_
 
 _Widgets_
 | Description                         | Credits                                                                                 |
-| :---:                               | :---:                                                                                   |
+| :---------------------------------: | :-------------------------------------------------------------------------------------: |
 | RAM text                            | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
 | CPU graph                           | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                 |
 | MPD control                         | [Copycat's Holo theme theme widget](https://github.com/lcpz/awesome-copycats)           |
@@ -44,7 +44,7 @@ _Keybindings_
 
 - Specific application to tags
 | App category         | Application    | Keybinding            |
-| :---:                | :---:          | :---:                 |
+| :-------------------:| :------------: | :--------------------: |
 | File manager         |  Dolphin       | Super + Left_Alt + f  |
 | Image editor         | Gimp           | Super + Left_Alt + i  |
 | Vector editor        | Inkscape       | Super + Left_Alt + v  |
