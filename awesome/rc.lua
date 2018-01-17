@@ -84,6 +84,7 @@ local acad_ref_man   = "zotero"
 --local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e irssi"
 local remote_client  = "anydesk"
+local dvd_suite      = "k3b"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -336,8 +337,8 @@ globalkeys = awful.util.table.join(
     -- Dynamic tagging
     awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end),
     awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end),
-    awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(1) end),   -- move to next tag
-    awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(-1) end), -- move to previous tag
+    awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end),   -- move to next tag
+    awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end), -- move to previous tag
     awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end),
 
     -- Standard program
@@ -411,6 +412,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
     awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
+    -- DVD/CD/Bry Ray suite
+    awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
     -- Social
     awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
     -- Gaming
@@ -648,6 +651,12 @@ awful.rules.rules = {
     -- Set Anydesk to always map to the eighth tag of screen 1
     { rule = { name = "AnyDesk" },
       properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+    -- Set k3b kde dvd/cd suite to always map to the fifth tag of screen 1
+    { rule = { name = "K3b" },
+      properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
+
+
 
 }
 -- }}}

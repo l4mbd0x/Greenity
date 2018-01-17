@@ -277,6 +277,7 @@ currency_timer:connect_signal("timeout", function ()
    time = stdout
    end)
 end)
+
 currency_timer:start()
 currency_timer:emit_signal("timeout")
 

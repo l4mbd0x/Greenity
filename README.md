@@ -69,6 +69,7 @@ _Keybindings_
 | Audio control Down   | Awesome widget | F2                    | none |
 | Screenshot¹ app      | scrot          | PrtSc                 | none |
 | Lock screen app      | i3lock         | F12                   | none |
+| DVD suite            | k3b            | Super + Left_Alt + d  | 5 |
 
 - Workspaces: Super + Shift + [1..9]
 
