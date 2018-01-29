@@ -75,7 +75,7 @@ local email_client   = "thunderbird"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
---local torrent_client = "transmission-qt"
+local torrent_client = "transmission-gtk"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
 local chat_client    = "skypeforlinux"
@@ -613,7 +613,7 @@ awful.rules.rules = {
       properties = { screen = 1, tag = screen[1].tags[2] } },
 
     -- Set Transmission torrent client to always map on the eighth tag on screen 1.
-    { rule = { class = "transmission" },
+    { rule = { name = "Transmission" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
     -- Set Xmind to always map on the fourth tag on screen 1.
