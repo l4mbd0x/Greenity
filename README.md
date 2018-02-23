@@ -29,7 +29,7 @@ _Widgets_
  | RAM text                         | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | CPU graph                        | [Personnal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)          |
- | Currency text                    | Personnal creation                                                                     |
+ | Currency text                    | Personal creation                                                                     |
  | Volume display                   | [Personnal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/) |
  | Download/Upload text             | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
  | Weather display toolkit text     | [lain](https://github.com/lcpz/lain/wiki)                                              |
