@@ -264,15 +264,22 @@ currency_widget = wibox.widget {
 
 
 local currency_timer = timer({ timeout = 300 })
-local resp
+local resp1
+local resp2
 
 currency_timer:connect_signal("timeout", function ()
    awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
-   local resp_json_1 = http.request("https://api.fixer.io/latest?base=USD;symbols=BRL")
-   if (resp_json_1 ~= nil) then
-       resp_1 = json.decode(resp_json_1)
-       temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp_1.rates.BRL))
-   end
+
+   -- Asynchronous call 1
+   awful.spawn.easy_async("curl -s 'https://api.fixer.io/latest?base=USD;symbols=BRL'", function(stdout1, stderr1, reason1, exit_code1)
+      resp1 = json.decode(stdout1)
+      temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp1.rates.BRL ))
+   end)
+
+   -- Asynchronous call 2
+   awful.spawn.easy_async("curl -s 'https://api.fixer.io/latest?base=EUR;symbols=BRL'", function(stdout2, stderr2, reason2, exit_code2)
+      resp2 = json.decode(stdout2)
+   end)
 
    time = stdout
    end)
@@ -284,8 +291,8 @@ currency_timer:emit_signal("timeout")
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
-        text = "USD: " .. resp_1.rates.BRL .. " BRL\n" ..
-               "Updated in: " .. resp_1.date .. " " .. time,
+        text = "USD: " .. resp1.rates.BRL .. " BRL\n" .. "EUR: " .. resp2.rates.BRL .. " BRL\n" ..
+               "Updated in: " .. resp1.date .. " " .. time,
         timeout = 5, hover_timeout = 0.5,
         icon = theme.currency,
         icon_size = 100,
