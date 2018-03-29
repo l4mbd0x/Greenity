@@ -271,7 +271,7 @@ currency_timer:connect_signal("timeout", function ()
    awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
 
    -- Asynchronous call 1
-   awful.spawn.easy_async("curl -s 'https://api.fixer.io/latest?base=USD;symbols=BRL'", function(stdout1, stderr1, reason1, exit_code1)
+   awful.spawn.easy_async("curl -s 'http://api.fixer.io/latest?base=USD;symbols=BRL'", function(stdout1, stderr1, reason1, exit_code1)
    if stderr1 == "" then
       resp1 = json.decode(stdout1)
       temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp1.rates.BRL ))
@@ -279,7 +279,7 @@ currency_timer:connect_signal("timeout", function ()
    end)
 
    -- Asynchronous call 2
-   awful.spawn.easy_async("curl -s 'https://api.fixer.io/latest?base=EUR;symbols=BRL'", function(stdout2, stderr2, reason2, exit_code2)
+   awful.spawn.easy_async("curl -s 'http://api.fixer.io/latest?base=EUR;symbols=BRL'", function(stdout2, stderr2, reason2, exit_code2)
    if stderr2 == "" then
       resp2 = json.decode(stdout2)
    end
