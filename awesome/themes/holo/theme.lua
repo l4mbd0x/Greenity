@@ -297,7 +297,7 @@ currency_widget:connect_signal("mouse::enter", function()
         font = "Monospace 9",
         text = "USD: " .. resp1.rates.BRL .. " BRL\n" .. "EUR: " .. resp2.rates.BRL .. " BRL\n" ..
                "Updated in: " .. resp1.date .. " " .. time,
-        timeout = 5, hover_timeout = 0.5,
+        timeout = 5, hover_timeout = 0.1,
         icon = theme.currency,
         icon_size = 100,
         width = 415,
