@@ -55,18 +55,15 @@ run_once({ "urxvtd", "unclutter -root" })
 local modkey         = "Mod4"
 local altkey         = "Mod1"
 local leftshiftkey   = "Shift"
+local leftcontrolkey = "Control"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
-
-
---Urxvt users
--- Add to buffer: select data & Ctrl+Ins
--- Ctrl+Alt+V
 local terminal       = "urxvtc"
 local gaming_1       = "STEAM_RUNTIME=1 steam"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer     = "okular"
+local pdf_viewer2    = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
 local image_editor   = "gimp"
@@ -238,8 +235,8 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
 
     -- Treetile vertical/horizontal split control
-    awful.key({ modkey }, "h", treetile.vertical),
-    awful.key({ modkey }, "v", treetile.horizontal),
+    awful.key({ modkey, leftshiftkey }, "h", treetile.vertical),
+    awful.key({ modkey, leftshiftkey }, "v", treetile.horizontal),
 
 
     -- Scrot screenshot
@@ -410,6 +407,7 @@ globalkeys = awful.util.table.join(
     -- File editing
     awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
     awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
+    awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
     awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
     -- DVD/CD/Bry Ray suite
@@ -590,6 +588,10 @@ awful.rules.rules = {
 
     -- Set Okular PDF file viewer to always map on the fourth tag on screen 1.
     { rule = { class = "okular" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
+
+    -- Set Evince PDF file viewer to always map on the fourth tag on screen 1.
+    { rule = { name = "Recent Documents" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
     -- Set Kile to always map on the third tag on screen 1.

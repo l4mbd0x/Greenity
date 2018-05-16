@@ -40,8 +40,8 @@ _Keybindings_
 - Printscreen¹ PrtSc 
 - Increase volume: F3 
 - Decrease volume: F2 
-- Treetile vertical split set: Super + v
-- Treetile horizontal split set: Super + h
+- Treetile vertical split set: LeftShift + Super + v
+- Treetile horizontal split set: LeftShift + Super + h
 
 - Specific application to tags:
 
@@ -55,6 +55,7 @@ _Keybindings_
 | Browser              | Firefox Aurora | Super + Left_Alt + b  | 1 |
 | Office suite         | Libreoffice    | Super + Left_Alt + o  | 3 |
 | Pdf viewer           | Okular         | Super + Left_Alt + p  | 5 |
+| Pdf viewer           | Evince         | Super + Left_Alt + Left_Ctl + p | 4|
 | Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p | 4|
 | Video Streamming Hub | Stremio        | Super + Left_Alt + s  | 8 |
 | Chat client          | Skypeforlinux  | Super + Left_Alt + c  | 7 |
