@@ -295,7 +295,7 @@ currency_timer:emit_signal("timeout")
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
-        text = "USD: " .. resp2.rates.BRL .. " BRL\n" .. "EUR: " .. resp1.quotes.USDBRL .. " BRL\n" ..
+        text = "EUR: " .. resp2.rates.BRL .. " BRL\n" .. "USD: " .. resp1.quotes.USDBRL .. " BRL\n" ..
                "Updated in: " .. resp2.date .. " " .. time,
         timeout = 5, hover_timeout = 0.1,
         icon = theme.currency,
