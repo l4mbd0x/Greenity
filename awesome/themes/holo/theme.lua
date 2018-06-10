@@ -262,8 +262,8 @@ currency_widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
 }
 
-
-local currency_timer = timer({ timeout = 300 })
+--supposed to update each hour
+local currency_timer = timer({ timeout = 3600 })
 local resp1
 local resp2
 
@@ -271,15 +271,15 @@ currency_timer:connect_signal("timeout", function ()
    awful.spawn.easy_async("date +%H:%M", function(stdout, stderr, reason, exit_code)
 
    -- Asynchronous call 1
-   awful.spawn.easy_async("curl -s 'http://api.fixer.io/latest?base=USD;symbols=BRL'", function(stdout1, stderr1, reason1, exit_code1)
+   awful.spawn.easy_async("curl -s 'http://apilayer.net/api/live?access_key=b1cba250b8e5286cefd3f1ffc5e71d42&currencies=BRL&format=1'", function(stdout1, stderr1, reason1, exit_code1)
    if stderr1 == "" then
       resp1 = json.decode(stdout1)
-      temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp1.rates.BRL ))
+      temp_widget:set_markup(" " .. markup.font(theme.font, "R$ " .. resp1.quotes.USDBRL ))
    end
    end)
 
    -- Asynchronous call 2
-   awful.spawn.easy_async("curl -s 'http://api.fixer.io/latest?base=EUR;symbols=BRL'", function(stdout2, stderr2, reason2, exit_code2)
+   awful.spawn.easy_async("curl -s 'http://data.fixer.io/api/latest?access_key=7c00a97c6c88aae2a50d57c5baa3c267&symbols=BRL&format=1'", function(stdout2, stderr2, reason2, exit_code2)
    if stderr2 == "" then
       resp2 = json.decode(stdout2)
    end
@@ -295,8 +295,8 @@ currency_timer:emit_signal("timeout")
 currency_widget:connect_signal("mouse::enter", function()
     naughty.notify{
         font = "Monospace 9",
-        text = "USD: " .. resp1.rates.BRL .. " BRL\n" .. "EUR: " .. resp2.rates.BRL .. " BRL\n" ..
-               "Updated in: " .. resp1.date .. " " .. time,
+        text = "USD: " .. resp2.rates.BRL .. " BRL\n" .. "EUR: " .. resp1.quotes.USDBRL .. " BRL\n" ..
+               "Updated in: " .. resp2.date .. " " .. time,
         timeout = 5, hover_timeout = 0.1,
         icon = theme.currency,
         icon_size = 100,
