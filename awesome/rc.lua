@@ -60,10 +60,11 @@ local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
 local terminal       = "urxvtc"
 local gaming_1       = "STEAM_RUNTIME=1 steam"
+local gamingChat       = "discord"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
-local pdf_viewer     = "okular"
-local pdf_viewer2    = "evince"
+local pdf_viewer2    = "okular"
+local pdf_viewer     = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
 local image_editor   = "gimp"
@@ -75,6 +76,7 @@ local office_editor  = "libreoffice"
 local torrent_client = "transmission-gtk"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
+local online_editor  = "turtl"
 local chat_client    = "skypeforlinux"
 --local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
@@ -406,6 +408,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey }, "v", function () awful.spawn(vector_editor) end),
     -- File editing
     awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
+    awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
     awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
     awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
@@ -417,6 +420,8 @@ globalkeys = awful.util.table.join(
     -- Gaming
     awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
     --awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
+    -- Gaming
+    awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gamingChat) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
     -- Password manager
@@ -586,6 +591,10 @@ awful.rules.rules = {
     { rule = { class = "libreoffice" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
+    -- Set Turtl to always map on the third tag on screen 1.
+    { rule = { class = "Turtl" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+
     -- Set Okular PDF file viewer to always map on the fourth tag on screen 1.
     { rule = { class = "okular" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
@@ -600,6 +609,10 @@ awful.rules.rules = {
 
     -- Set Steam to always map on the ninth tag on screen 1.
     { rule = { class = "Steam" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[9] } },
+
+    -- Set Discord to always map on the ninth tag on screen 1.
+    { rule = { name = "Discord" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[9] } },
 
      -- Set Skype for Linux to always map on the seventh tag on screen 1.
