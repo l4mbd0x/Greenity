@@ -77,6 +77,7 @@ local torrent_client = "transmission-gtk"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
 local online_editor  = "turtl"
+local uml_editor     = "argouml"
 local chat_client    = "skypeforlinux"
 --local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
@@ -413,6 +414,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
     awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
+    awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
     -- DVD/CD/Bry Ray suite
     awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
     -- Social
@@ -633,6 +635,10 @@ awful.rules.rules = {
 
     -- Set Xmind to always map on the fourth tag on screen 1.
     { rule = { class = "XMind" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+
+-- Set Argouml to always map on the fourth tag on screen 1.
+    { rule = { name = "ArgoUML" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Encryptr to always map to the eighth tag of screen 1 and switch to this very tag.

@@ -25,7 +25,7 @@ _Others_
 _Widgets_
 
  | Description | Credits |
- | :---: | :---: |
+ | :--- | :--- |
  | RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
  | MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)          |
@@ -46,12 +46,13 @@ _Keybindings_
 - Specific application to tags:
 
 | App category         | Application    | Keybinding            | Tag |
-| :-------------------:| :------------: | :--------------------: | :---: |
+| :-------------------| :------------ | :-------------------- | :--- |
 | File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
 | Image editor         | Gimp           | Super + Left_Alt + i  | 4 |
 | Vector editor        | Inkscape       | Super + Left_Alt + v  | 4 |
 | Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v | 8 |
 | Gaming apps          | Steam          | Super + Left_Alt + g  | 9 |
+| Gaming chat client   | Discord        | Super + Left_Alt + Left_Shift + g | 9 |
 | Browser              | Firefox Aurora | Super + Left_Alt + b  | 1 |
 | Office suite         | Libreoffice    | Super + Left_Alt + o  | 3 |
 | Pdf viewer           | Okular         | Super + Left_Alt + p  | 5 |
@@ -71,10 +72,12 @@ _Keybindings_
 | Screenshot¹ app      | scrot          | PrtSc                 | none |
 | Lock screen app      | i3lock         | F12                   | none |
 | DVD suite            | k3b            | Super + Left_Alt + d  | 5 |
+| Online editor        | Turtl          | Super + Left_Alt + n  | 3 |
+| UML editor           | ArgoUML        | Super + Left_Alt + u  | 4 |
 
 - Workspaces: Super + Shift + [1..9]
 
-_¹screenshots to ~/Screenshots_  
+_¹screenshots to ~/Screenshots_
 
 Redesigned icons for better looking with Awesome 4.2 (size and colors)
 - Lain icon layout
@@ -86,17 +89,10 @@ Redesigned icons for better looking with Awesome 4.2 (size and colors)
   - treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
 
 ## Way to use it
-Clone and copy awesome directory directly to your ~/.config/awesome  
+Clone and copy awesome directory directly to your ~/.config/awesome
 
 ![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
 ![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
 ![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
 ![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
 ![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/8e1b0d809b0600a145e37c644e91527512b42c30/screenshots_taken/img4.png)
-
-
-
-
-
-
-
