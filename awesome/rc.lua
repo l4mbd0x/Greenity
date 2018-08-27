@@ -63,7 +63,7 @@ local gaming_1       = "STEAM_RUNTIME=1 steam"
 local gamingChat       = "discord"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
-local pdf_viewer2    = "okular"
+--local pdf_viewer2    = "okular"
 local pdf_viewer     = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
@@ -73,18 +73,19 @@ local email_client   = "thunderbird"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
-local torrent_client = "transmission-gtk"
+local torrent_client = "transmission-qt"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
 local online_editor  = "turtl"
-local uml_editor     = "argouml"
+local uml_editor     = "StarUML-3.0.2-x86_64.AppImage"
 local chat_client    = "skypeforlinux"
---local virt_manager   = "virtualbox"
+local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
 --local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e irssi"
 local remote_client  = "anydesk"
 local dvd_suite      = "k3b"
+local petri_editor  =  "java -classpath /home/lambd0x/.PIPEv4.3.0/Pipe/ Pipe"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -411,18 +412,18 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
     awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
     awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
-    awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
+    awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(petri_editor) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
     awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
     awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
-    -- DVD/CD/Bry Ray suite
+    -- DVD/CD/BlueRay suite
     awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
     -- Social
     awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
     -- Gaming
     awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
     --awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
-    -- Gaming
+
     awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gamingChat) end),
     -- Streaming platform
     awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
@@ -573,12 +574,16 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[1] } },
 
+    -- Set Virtualbox to always map on the eighth tag on screen 1.
+    { rule = { class = "VirtualBox" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
     -- Set Dolphin file manager to always map on the fifth tag on screen 1.
     { rule = { class = "dolphin" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
     -- Set Thunderbird email client to always map on the sixth tag on screen 1.
-    { rule = { class = "Thunderbird" },
+    { rule = { name = "Thunderbird Daily" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
 
     -- Set Gimp to always map on the fourth tag on screen 1.
@@ -597,9 +602,13 @@ awful.rules.rules = {
     { rule = { class = "Turtl" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
-    -- Set Okular PDF file viewer to always map on the fourth tag on screen 1.
+    -- Set Okular PDF file viewer to always map on the fifth tag on screen 1.
     { rule = { class = "okular" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
+
+    -- Set PIPE Petri net editor to always map on the fourth tag on screen 1.
+    { rule = { class = "Pipe" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Evince PDF file viewer to always map on the fourth tag on screen 1.
     { rule = { name = "Recent Documents" },
@@ -637,8 +646,12 @@ awful.rules.rules = {
     { rule = { class = "XMind" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
--- Set Argouml to always map on the fourth tag on screen 1.
+    -- Set Argouml to always map on the fourth tag on screen 1.
     { rule = { name = "ArgoUML" },
+      properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+
+    -- Set StartUML to always map on the fourth tag on screen 1.
+    { rule = { name = "StarUML" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Encryptr to always map to the eighth tag of screen 1 and switch to this very tag.
@@ -767,6 +780,7 @@ client.connect_signal("focus",
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+-- Uncomment only if you has xscreensaver installed.
 --Autorun xscreensaver daemon
-awful.spawn.with_shell("xscreensaver -no-splash")
+--awful.spawn.with_shell("xscreensaver -no-splash")
 -- }}}
