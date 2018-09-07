@@ -65,6 +65,7 @@ local gamingChat       = "discord"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 --local pdf_viewer2    = "okular"
 local pdf_viewer     = "evince"
+local pdf_viewer2    = "okular"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
 local image_editor   = "gimp"
@@ -85,7 +86,7 @@ local acad_ref_man   = "zotero"
 local irc_client     = "urxvtc -e irssi"
 local remote_client  = "anydesk"
 local dvd_suite      = "k3b"
-local petri_editor  =  "java -classpath /home/lambd0x/.PIPEv4.3.0/Pipe/ Pipe"
+local petri_editor  =  "java -jar '/home/lambd0x/.WoPeD/WoPeD.jar'"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -412,9 +413,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
     awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
     awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
-    awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(petri_editor) end),
+    awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
     awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
     awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
+    awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
+
     awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
     -- DVD/CD/BlueRay suite
     awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
@@ -607,7 +610,7 @@ awful.rules.rules = {
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
     -- Set PIPE Petri net editor to always map on the fourth tag on screen 1.
-    { rule = { class = "Pipe" },
+    { rule = { class = "WoPeD" },
       properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
     -- Set Evince PDF file viewer to always map on the fourth tag on screen 1.
