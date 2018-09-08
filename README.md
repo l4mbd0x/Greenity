@@ -46,7 +46,7 @@ _Keybindings_
 - Specific application to tags:
 
 | App category         | Application    | Keybinding            | Tag |
-| :-------------------| :------------ | :-------------------- | :--- |
+| :------------------- | :------------ | :-------------------- | :--- |
 | File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
 | Image editor         | Gimp           | Super + Left_Alt + i  | 4 |
 | Vector editor        | Inkscape       | Super + Left_Alt + v  | 4 |
@@ -72,9 +72,9 @@ _Keybindings_
 | Screenshot¹ app      | scrot          | PrtSc                 | none |
 | Lock screen app      | i3lock         | F12                   | none |
 | DVD suite            | k3b            | Super + Left_Alt + d  | 5 |
-| Online editor        | Turtl          | Super + Left_Alt + n  | 3 |
+| Note editor          | Turtl          | Super + Left_Alt + n  | 3 |
 | UML editor           | starUML        | Super + Left_Alt + u  | 4 |
-| Petri editor         | PIPE           | Super + Left_Alt + Left_Ctrl + p | 4 |
+| Petri editor         | WoPeD          | Super + Left_Alt + Left_Ctrl + m | 4 |
 
 - Workspaces: Super + Shift + [1..9]
 
