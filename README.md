@@ -2,15 +2,13 @@
 _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Mandatory deps:
-### Awesome-wm will break otherwise.
 - [x] luasocket
 
 ## Optional deps:
-### features are affected.
 - [x] mpc
 - [x] mpd
 - [x] xset
-- [x] urxvt
+- [x] urxvt (Awesome-wm is useless without it just as a sysadmin is without a shell).
 - [x] scrot
 - [x] dmenu
 - [x] Roboto
