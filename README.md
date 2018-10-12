@@ -18,12 +18,14 @@ Its lack will break Awesome-wm.
 - [x] unclutter
 - [x] consolekit
 - [x] FontAwesome
+
 Its lack will interfere with the current supported features.
 
 ## Features
 _Others_
 - Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile))
-A very interesting layout for Awesome-wm which complements well the user experience along tmux or similar terminal multiplexers.
+
+An interesting layout for Awesome-wm which complements well the user experience along tmux or similar terminal multiplexer.
 
 _Widgets_
 
