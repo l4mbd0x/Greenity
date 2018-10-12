@@ -590,7 +590,7 @@ awful.rules.rules = {
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
 	-- Set Thunderbird email client to always map on the sixth tag on screen 1.
-	{ rule = { name = "Thunderbird Daily" },
+	{ rule = { name = "Earlybird" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
 
 	-- Set Gimp to always map on the fourth tag on screen 1.

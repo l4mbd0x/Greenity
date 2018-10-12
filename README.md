@@ -3,48 +3,51 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 
 ## Mandatory deps
 - [x] luasocket
+Its lack will break Awesome-wm.
 
-## Dependencies required 
+## Dependencies required
 - [x] mpc
 - [x] mpd
-- [x] xset         
-- [x] urxvt        
-- [x] scrot        
-- [x] dmenu        
-- [x] Roboto       
+- [x] xset
+- [x] urxvt
+- [x] scrot
+- [x] dmenu
+- [x] Roboto
 - [x] i3lock
 - [x] ncmpcpp
-- [x] unclutter    
+- [x] unclutter
 - [x] consolekit
-- [x] FontAwesome  
+- [x] FontAwesome
+Its lack will interfere with the current supported features.
 
 ## Features
 _Others_
 - Binary Tree layout ([Treetile](https://github.com/guotsuan/awesome-treetile))
+A very interesting layout for Awesome-wm which complements well the user experience along tmux or similar terminal multiplexers.
 
 _Widgets_
 
- | Description | Credits |
- | :--- | :--- |
- | RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
- | CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
- | MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)          |
- | Currency text                    | Personal creation                                                                     |
- | Volume display                   | [Personal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/) |
- | Download/Upload text             | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
- | Weather display toolkit text     | [lain](https://github.com/lcpz/lain/wiki)                                              |
- | time/date/calendar toolkit text  | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
+| Description | Credits |
+| :--- | :--- |
+| RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
+| CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
+| MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)          |
+| Currency text                    | Personal creation                                                                     |
+| Volume display                   | [Personal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/) |
+| Download/Upload text             | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
+| Weather display toolkit text     | [lain](https://github.com/lcpz/lain/wiki)                                              |
+| time/date/calendar toolkit text  | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
 
 _Keybindings_
 - Block screen: F12
-- Printscreen¹ PrtSc 
-- Increase volume: F3 
-- Decrease volume: F2 
+- Printscreen¹ PrtSc
+- Increase volume: F3
+- Decrease volume: F2
 - Treetile vertical split set: LeftShift + Super + v
 - Treetile horizontal split set: LeftShift + Super + h
+_¹screenshots to ~/Screenshots_
 
 - Specific application to tags:
-
 | App category         | Application    | Keybinding            | Tag |
 | :------------------- | :------------ | :-------------------- | :--- |
 | File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
@@ -78,22 +81,21 @@ _Keybindings_
 
 - Workspaces: Super + Shift + [1..9]
 
-_¹screenshots to ~/Screenshots_
 
 Redesigned icons for better looking with Awesome 4.2 (size and colors)
-- Lain icon layout
-  - cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
-  - cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
-  - centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
-  - termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
+	- Lain icon layout
+	- cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
+	- cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
+	- centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
+	- termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
 - Binary tree icon layout (treetile)
-  - treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
+	- treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
 
 ## Way to use it
-Clone and copy awesome directory directly to your ~/.config/awesome
+	Clone and copy awesome directory directly to your ~/.config/awesome
 
-![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
-![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
-![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
-![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
-![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/8e1b0d809b0600a145e37c644e91527512b42c30/screenshots_taken/img4.png)
+	![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
+	![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
+	![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
+	![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
+	![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/8e1b0d809b0600a145e37c644e91527512b42c30/screenshots_taken/img4.png)
