@@ -26,11 +26,11 @@ _Widgets_
 
 | Description | Credits |
 | :--- | :--- |
-| RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
-| CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                |
-| MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)          |
-| Currency text                    | Personal creation                                                                     |
-| Volume display                   | [Personal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/) |
+| RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                 |
+| CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                 |
+| MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
+| Currency text                    | Personal creation                                                                      |
+| Volume display                   | [Personal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/)  |
 | Download/Upload text             | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
 | Weather display toolkit text     | [lain](https://github.com/lcpz/lain/wiki)                                              |
 | time/date/calendar toolkit text  | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
@@ -79,7 +79,6 @@ _¹screenshots to ~/Screenshots_
 
 - Workspaces: Super + Shift + [1..9]
 
-
 Redesigned icons for better looking with Awesome 4.2 (size and colors)
 	- Lain icon layout
 	- cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
@@ -92,8 +91,8 @@ Redesigned icons for better looking with Awesome 4.2 (size and colors)
 ## Way to use it
 	Clone and copy awesome directory directly to your ~/.config/awesome
 
-#![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
-#![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
-#![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
-#![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
-#![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/8e1b0d809b0600a145e37c644e91527512b42c30/screenshots_taken/img4.png)
+	- ![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
+	- ![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
+	- ![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
+	- ![Image 9](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img3.png)
+	- ![Image 10](https://raw.githubusercontent.com/lambd0x/Funtoo-GreenInfinity/8e1b0d809b0600a145e37c644e91527512b42c30/screenshots_taken/img4.png)
