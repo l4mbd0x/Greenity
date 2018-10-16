@@ -8,7 +8,7 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] mpc
 - [x] mpd
 - [x] xset
-- [x] urxvt (Awesome-wm is useless without it just as a sysadmin is without a shell).
+- [x] urxvt (Awesome-wm is useless without this, just as a sysadmin is without a shell).
 - [x] scrot
 - [x] dmenu
 - [x] Roboto
