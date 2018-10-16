@@ -45,6 +45,7 @@ _Keybindings_
 _¹screenshots to ~/Screenshots_
 
 - Specific application to tags:
+
 | App category         | Application    | Keybinding                        | Tag  |
 | :------------------- | :------------  | :--------------------             | :--- |
 | File manager         |  Dolphin       | Super + Left_Alt + f              | 5 |
