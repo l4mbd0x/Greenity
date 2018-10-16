@@ -45,36 +45,36 @@ _Keybindings_
 _¹screenshots to ~/Screenshots_
 
 - Specific application to tags:
-| App category         | Application    | Keybinding            | Tag |
-| :------------------- | :------------ | :-------------------- | :--- |
-| File manager         |  Dolphin       | Super + Left_Alt + f  | 5 |
-| Image editor         | Gimp           | Super + Left_Alt + i  | 4 |
-| Vector editor        | Inkscape       | Super + Left_Alt + v  | 4 |
+| App category         | Application    | Keybinding                        | Tag  |
+| :------------------- | :------------  | :--------------------             | :--- |
+| File manager         |  Dolphin       | Super + Left_Alt + f              | 5 |
+| Image editor         | Gimp           | Super + Left_Alt + i              | 4 |
+| Vector editor        | Inkscape       | Super + Left_Alt + v              | 4 |
 | Virt man             | VirtualBox     | Super + Left_Alt + Left_Shift + v | 8 |
-| Gaming apps          | Steam          | Super + Left_Alt + g  | 9 |
+| Gaming apps          | Steam          | Super + Left_Alt + g              | 9 |
 | Gaming chat client   | Discord        | Super + Left_Alt + Left_Shift + g | 9 |
-| Browser              | Firefox Aurora | Super + Left_Alt + b  | 1 |
-| Office suite         | Libreoffice    | Super + Left_Alt + o  | 3 |
-| Pdf viewer           | Okular         | Super + Left_Alt + p  | 5 |
-| Pdf viewer           | Evince         | Super + Left_Alt + Left_Ctl + p | 4|
-| Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p | 4|
-| Video Streamming Hub | Stremio        | Super + Left_Alt + s  | 8 |
-| Chat client          | Skypeforlinux  | Super + Left_Alt + c  | 7 |
-| IRC client           | Irssi          | Super + Left_Alt + Left_Shift + c | 7|
-| Email client         | Earlybird      | Super + Left_Alt + e  | 6 |
-| Academic client      | Zotero         | Super + Left_Alt + a  | 3 |
+| Browser              | Firefox Aurora | Super + Left_Alt + b              | 1 |
+| Office suite         | Libreoffice    | Super + Left_Alt + o              | 3 |
+| Pdf viewer           | Okular         | Super + Left_Alt + p              | 5 |
+| Pdf viewer           | Evince         | Super + Left_Alt + Left_Ctl + p   | 4 |
+| Key manager          | Encryptr       | Super + Left_Alt + Left_Shift + p | 4 |
+| Video Streamming Hub | Stremio        | Super + Left_Alt + s              | 8 |
+| Chat client          | Skypeforlinux  | Super + Left_Alt + c              | 7 |
+| IRC client           | Irssi          | Super + Left_Alt + Left_Shift + c | 7 |
+| Email client         | Earlybird      | Super + Left_Alt + e              | 6 |
+| Academic client      | Zotero         | Super + Left_Alt + a              | 3 |
 | Android Dev          | Android Studio | Super + Left_Alt + Left_Shift + a | 2 |
-| LaTeX editor         | Kile           | Super + Left_Alt + l  | 3 |
-| Mindmap editor       | Xmind          | Super + Left_Alt + m  | 4 |
-| Remote access        | Anydesk        | Super + Left_Alt + r  | 8 |
-| Audio control UP     | Awesome widget | F3                    | none |
-| Audio control Down   | Awesome widget | F2                    | none |
-| Screenshot¹ app      | scrot          | PrtSc                 | none |
-| Lock screen app      | i3lock         | F12                   | none |
-| DVD suite            | k3b            | Super + Left_Alt + d  | 5 |
-| Note editor          | Turtl          | Super + Left_Alt + n  | 3 |
-| UML editor           | starUML        | Super + Left_Alt + u  | 4 |
-| Petri editor         | WoPeD          | Super + Left_Alt + Left_Ctrl + m | 4 |
+| LaTeX editor         | Kile           | Super + Left_Alt + l              | 3 |
+| Mindmap editor       | Xmind          | Super + Left_Alt + m              | 4 |
+| Remote access        | Anydesk        | Super + Left_Alt + r              | 8 |
+| Audio control UP     | Awesome widget | F3                                | none |
+| Audio control Down   | Awesome widget | F2                                | none |
+| Screenshot¹ app      | scrot          | PrtSc                             | none |
+| Lock screen app      | i3lock         | F12                               | none |
+| DVD suite            | k3b            | Super + Left_Alt + d              | 5 |
+| Note editor          | Turtl          | Super + Left_Alt + n              | 3 |
+| UML editor           | starUML        | Super + Left_Alt + u              | 4 |
+| Petri editor         | WoPeD          | Super + Left_Alt + Left_Ctrl + m  | 4 |
 
 - Workspaces: Super + Shift + [1..9]
 
