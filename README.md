@@ -80,13 +80,13 @@ _¹screenshots to ~/Screenshots_
 - Workspaces: Super + Shift + [1..9]
 
 Redesigned icons for better looking with Awesome 4.2 (size and colors)
-	- Lain icon layout
-	- cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
-	- cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
-	- centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
-	- termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
+#- Lain icon layout
+#- cascade ![image_1](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascade.png)
+#- cascadetile ![image_2](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/cascadetile.png)
+#- centerwork ![image_3](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/centerwork.png)
+#- termfair ![image_4](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/lain/icons/layout/default/termfair.png)
 - Binary tree icon layout (treetile)
-	- treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
+#- treetile ![image_5](https://github.com/lambd0x/Funtoo-GreenInfinity/blob/master/awesome/treetile/treetile.png)
 
 ## Way to use it
 	Clone and copy awesome directory directly to your ~/.config/awesome
