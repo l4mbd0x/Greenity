@@ -57,7 +57,7 @@ local altkey         = "Mod1"
 local leftshiftkey   = "Shift"
 local leftcontrolkey = "Control"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
-local browser        = "firefox"
+local browser        = "firefox --private-window"
 local terminal       = "urxvtc -e tmux"
 local gaming_1       = "STEAM_RUNTIME=1 steam"
 local gamingChat       = "discord"
@@ -86,7 +86,7 @@ local acad_ref_man   = "zotero"
 local irc_client     = "urxvtc -e tmux new -s 0 irssi"
 local remote_client  = "anydesk"
 local dvd_suite      = "k3b"
-local petri_editor  =  "java -jar '/home/lambd0x/.WoPeD/WoPeD.jar'"
+local petri_editor  =  "java -jar '/home/lambd0x/petri_net_apps/WoPeD/WoPeD.jar'"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -590,7 +590,7 @@ awful.rules.rules = {
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
 	-- Set Thunderbird email client to always map on the sixth tag on screen 1.
-	{ rule = { name = "Earlybird" },
+	{ rule = { name = "Daily" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
 
 	-- Set Gimp to always map on the fourth tag on screen 1.
@@ -614,7 +614,15 @@ awful.rules.rules = {
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
 	-- Set PIPE Petri net editor to always map on the fourth tag on screen 1.
-	{ rule = { class = "WoPeD" },
+	{ rule = { name = "PIPE" },
+	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+
+	-- Set WoPeD Petri net editor to always map on the fourth tag on screen 1.
+	{ rule = { name = "WoPeD" },
+	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
+
+	-- Set Tapaal Petri net editor to always map on the fourth tag on screen 1.
+	{ rule = { name = "TAPAAL" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[4] } },
 
 	-- Set Evince PDF file viewer to always map on the fourth tag on screen 1.
