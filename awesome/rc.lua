@@ -63,11 +63,11 @@ local gaming_1       = "STEAM_RUNTIME=1 steam"
 local gamingChat       = "discord"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
---local pdf_viewer2    = "okular"
 local pdf_viewer     = "okular"
 local pdf_viewer2    = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
+local latex_editor2  = "texmaker"
 local image_editor   = "gimp"
 --local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
 local email_client   = "thunderbird"
@@ -412,9 +412,10 @@ awful.key({ modkey, altkey }, "v", function () awful.spawn(vector_editor) end),
 -- File editing
 awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
 awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
-awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
-awful.key({ modkey, altkey, leftcontrolkey }, "p", function () awful.spawn(pdf_viewer2) end),
-awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
+--awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
+awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer2) end),
+--awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
+awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor2) end),
 awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
 awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
 
@@ -629,7 +630,7 @@ awful.rules.rules = {
 	{ rule = { name = "Recent Documents" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
-	-- Set Kile to always map on the third tag on screen 1.
+	-- Set Texmaker to always map on the third tag on screen 1.
 	{ rule = { name = "Texmaker" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
