@@ -64,13 +64,14 @@ local gamingChat       = "discord"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 local pdf_viewer     = "okular"
-local pdf_viewer2    = "evince"
+--local pdf_viewer2    = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
 local latex_editor   = "kile"
-local latex_editor2  = "texmaker"
+--local latex_editor2  = "texmaker"
 local image_editor   = "gimp"
 --local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
 local email_client   = "thunderbird"
+local email_client2   = "./.Tutanota/tutanota.AppImage"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
 local office_editor  = "libreoffice"
@@ -78,15 +79,19 @@ local torrent_client = "transmission-qt"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
 local online_editor  = "turtl"
-local uml_editor     = "StarUML-3.0.2-x86_64.AppImage"
+--local uml_editor     = "StarUML-3.0.2-x86_64.AppImage"
 local chat_client    = "skypeforlinux"
-local virt_manager   = "virtualbox"
+--local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
+--local arduino_editor = "arduino"
+local arduino_editor = "visual-studio-code"
+
 --local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e tmux new -s 0 irssi"
 local remote_client  = "anydesk"
+--local remote_client2 = "teamviewer"
 local dvd_suite      = "k3b"
-local petri_editor  =  "java -jar '/home/lambd0x/petri_net_apps/WoPeD/WoPeD.jar'"
+--local petri_editor  =  "java -jar '/home/lambd0x/petri_net_apps/WoPeD/WoPeD.jar'"
 awful.util.terminal  = terminal
 
 awful.layout.layouts = {
@@ -115,6 +120,7 @@ awful.layout.layouts = {
 	--lain.layout.centerwork,
 	treetile,
 }
+
 awful.util.taglist_buttons = awful.util.table.join(
 awful.button({ }, 1, function(t) t:view_only() end),
 awful.button({ modkey }, 1, function(t)
@@ -402,7 +408,7 @@ awful.key({ }, "F2", function () awful.util.spawn("amixer set Master 5%-") end),
 -- User programs
 -- Web
 awful.key({ modkey, altkey }, "b", function () awful.spawn(browser) end),
-awful.key({ modkey, altkey }, "e", function () awful.spawn(email_client) end),
+awful.key({ modkey, altkey }, "e", function () awful.spawn(email_client2) end),
 awful.key({ modkey, altkey }, "t", function () awful.spawn(torrent_client) end),
 -- File management
 awful.key({ modkey, altkey }, "f", function () awful.util.spawn_with_shell(file_manager) end),
@@ -412,13 +418,13 @@ awful.key({ modkey, altkey }, "v", function () awful.spawn(vector_editor) end),
 -- File editing
 awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
 awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
---awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
-awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer2) end),
---awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
-awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor2) end),
+awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
+--awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer2) end),
+awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
+--awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor2) end),
 awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
 awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
-
+awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(arduino_editor) end),
 awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
 -- DVD/CD/BlueRay suite
 awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
@@ -440,9 +446,10 @@ awful.key({ modkey, altkey}, "a", function () awful.spawn(acad_ref_man) end),
 -- Android development
 awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(android_dev) end),
 -- IRC Client
-awful.key({ modkey, altkey, leftshiftkey }, "c", function () awful.spawn(irc_client) end),
+awful.key({ modkey, altkey, leftshiftkey }, "i", function () awful.spawn(irc_client) end),
 -- Remote Access
 awful.key({ modkey, altkey}, "r", function () awful.spawn(remote_client) end),
+--awful.key({ modkey, altkey}, "r", function () awful.spawn(remote_client2) end),
 
 -- Prompt
 awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
@@ -590,6 +597,10 @@ awful.rules.rules = {
 	{ rule = { class = "dolphin" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
 
+	-- Set Tutanota email client to always map on the sixth tag on screen 1.
+	{ rule = { name = "Tutanota" },
+	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
+
 	-- Set Thunderbird email client to always map on the sixth tag on screen 1.
 	{ rule = { name = "Daily" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[6] } },
@@ -604,6 +615,14 @@ awful.rules.rules = {
 
 	-- Set Libreoffice to always map on the third tag on screen 1.
 	{ rule = { class = "libreoffice" },
+	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+
+	-- Set Arduino to always map on the third tag on screen 1.
+	{ rule = { name = "Arduino" },
+	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
+
+	-- Set Arduino to always map on the third tag on screen 1.
+	{ rule = { name = "Visual Studio Code" },
 	properties = { screen = 1, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
 
 	-- Set Turtl to always map on the third tag on screen 1.
@@ -694,10 +713,6 @@ awful.rules.rules = {
 	{ rule = { name = "Zotero" },
 	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
-	-- Set Android Studio to always map to third tag of screen 1
-	{ rule = { class = "jetbrains-studio" },
-	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[3] } },
-
 	-- Set irssi to always map to the seventh tag of screen 1
 	{ rule = { name = "irssi" },
 	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[7] } },
@@ -706,12 +721,13 @@ awful.rules.rules = {
 	{ rule = { name = "AnyDesk" },
 	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
+	-- Set TeamViewer to always map to the eighth tag of screen 1
+	{ rule = { name = "TeamViewer" },
+	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
 	-- Set k3b kde dvd/cd suite to always map to the fifth tag of screen 1
 	{ rule = { name = "K3b" },
 	properties = { screen = 1, switchtotag = false, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[5] } },
-
-
-
 }
 -- }}}
 
