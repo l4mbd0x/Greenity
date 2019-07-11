@@ -103,7 +103,7 @@ theme.titlebar_maximized_button_normal_active   = theme.default_dir.."/titlebar/
 theme.titlebar_maximized_button_focus_active    = theme.default_dir.."/titlebar/maximized_focus_active.png"
 
 -- http://fontawesome.io/cheatsheet
-awful.util.tagnames = {" ", " ", " ", "  "," ", " ", " ", " ", " " }
+awful.util.tagnames = {" ", "", "", "", "", "", "", "", "" }
 
 theme.musicplr = string.format("%s -e ncmpcpp", awful.util.terminal)
 

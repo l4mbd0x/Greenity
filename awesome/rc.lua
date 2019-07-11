@@ -74,7 +74,8 @@ local email_client   = "thunderbird"
 local email_client2   = "./.Tutanota/tutanota.AppImage"
 local chosen_theme   = "holo"
 local vector_editor  = "inkscape"
-local office_editor  = "libreoffice"
+local office_editor  = "wps"
+--local office_editor  = "libreoffice"
 local torrent_client = "transmission-qt"
 local mindmap_editor = "xmind"
 local pass_manager   = "urxvtc -e Encryptr"
@@ -83,8 +84,8 @@ local online_editor  = "turtl"
 local chat_client    = "skypeforlinux"
 --local virt_manager   = "virtualbox"
 local acad_ref_man   = "zotero"
---local arduino_editor = "arduino"
-local arduino_editor = "visual-studio-code"
+local arduino_editor = "arduino"
+local arduino_editor2 = "visual-studio-code"
 
 --local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e tmux new -s 0 irssi"
@@ -393,10 +394,8 @@ awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end),
 awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
 awful.key({ altkey, }, "m", function () if beautiful.currency_widget then beautiful.currency_widget.show(7) end end),
 
--- Xscreensaver lock screen
---awful.key({}, "F11", function () awful.util.spawn("xscreensaver-command -lock") end),
-
 -- I3lock lock screen
+-- Obs: requires `sudo chmod +r /etc/shadow` else i3lock won't read the password file
 awful.key({ }, "F12", function () awful.util.spawn_with_shell("sh ~/.config/awesome/lock/i3lock.sh") end),
 
 -- ALSA volume control
@@ -425,6 +424,7 @@ awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
 awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
 awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
 awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(arduino_editor) end),
+awful.key({ modkey, altkey, leftshiftkey }, "b", function () awful.spawn(arduino_editor2) end),
 awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
 -- DVD/CD/BlueRay suite
 awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),

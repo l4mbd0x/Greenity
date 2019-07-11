@@ -91,6 +91,10 @@ Redesigned icons for better looking with Awesome 4.2 (size and colors)
 ## Way to use it
 	Clone and copy awesome directory directly to your ~/.config/awesome
 
+## Observations
+
+1) I3lock might not recognize your password after typing it when the lock is active. To correct this: `sudo chmod +r /etc/shadow`
+
 ![Image 6](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img0.png)
 ![Image 7](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img1.png)
 ![Image 8](https://raw.githubusercontent.com/lambd0x/Awesome-wm-Funtoo-GreenInfinity/master/screenshots_taken/img2.png)
