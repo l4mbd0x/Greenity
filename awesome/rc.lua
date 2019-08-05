@@ -59,14 +59,14 @@ local leftcontrolkey = "Control"
 local editor         = os.getenv("EDITOR") or "vim" or "vi"
 local browser        = "firefox"
 local terminal       = "urxvtc -e tmux"
-local gaming_1       = "STEAM_RUNTIME=1 steam"
-local gamingChat       = "discord"
+--local gaming_1       = "STEAM_RUNTIME=1 steam"
+--local gamingChat       = "discord"
 --local gaming_2       = "playonlinux"
 local screenshot     = "scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
-local pdf_viewer     = "okular"
+--local pdf_viewer     = "okular"
 --local pdf_viewer2    = "evince"
 --local stream_plat    = "urxvtc -e .Stremio/Stremio-runtime"
-local latex_editor   = "kile"
+--local latex_editor   = "kile"
 --local latex_editor2  = "texmaker"
 local image_editor   = "gimp"
 --local file_manager   = "KDE_SESSION_VERSION=5; export KDE_SESSION_VERSION; KDE_FULL_SESSION=true; export KDE_FULL_SESSION; dolphin"
@@ -77,21 +77,22 @@ local vector_editor  = "inkscape"
 local office_editor  = "wps"
 --local office_editor  = "libreoffice"
 local torrent_client = "transmission-qt"
-local mindmap_editor = "xmind"
-local pass_manager   = "urxvtc -e Encryptr"
+--local mindmap_editor = "xmind"
+--local pass_manager   = "urxvtc -e Encryptr"
+local pass_manager2  = "keepass"
 local online_editor  = "turtl"
 --local uml_editor     = "StarUML-3.0.2-x86_64.AppImage"
-local chat_client    = "skypeforlinux"
+--local chat_client    = "skypeforlinux"
 --local virt_manager   = "virtualbox"
-local acad_ref_man   = "zotero"
-local arduino_editor = "arduino"
-local arduino_editor2 = "visual-studio-code"
+--local acad_ref_man   = "zotero"
+--local arduino_editor = "arduino"
+local arduino_editor2 = "vscode-bin"
 
 --local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e tmux new -s 0 irssi"
-local remote_client  = "anydesk"
+--local remote_client  = "anydesk"
 --local remote_client2 = "teamviewer"
-local dvd_suite      = "k3b"
+--local dvd_suite      = "k3b"
 --local petri_editor  =  "java -jar '/home/lambd0x/petri_net_apps/WoPeD/WoPeD.jar'"
 awful.util.terminal  = terminal
 
@@ -438,7 +439,7 @@ awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_wi
 -- Streaming platform
 awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
 -- Password manager
-awful.key({ modkey, altkey, leftshiftkey }, "p", function () awful.spawn(pass_manager) end),
+awful.key({ modkey, altkey, leftshiftkey }, "p", function () awful.spawn(pass_manager2) end),
 -- Virtualization
 awful.key({ modkey, altkey, leftshiftkey }, "v", function () awful.spawn(virt_manager) end),
 -- Academic References
@@ -695,6 +696,10 @@ awful.rules.rules = {
 
 	-- Set Encryptr to always map to the eighth tag of screen 1 and switch to this very tag.
 	{ rule = { name = "Encryptr" },
+	properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
+
+	-- Set Keypass to always map to the eighth tag of screen 1 and switch to this very tag.
+	{ rule = { name = "KeePass" },
 	properties = { screen = 1, switchtotag = true, maximized_vertical = true, maximized_horizontal = true, tag = screen[1].tags[8] } },
 
 	-- Set Stremio to always map to the eighth tag of screen 1.
