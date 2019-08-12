@@ -5,18 +5,16 @@ _Awesome WM config file based on the Holo Theme (v4.2)_
 - [x] luasocket
 
 ## Optional deps:
-- [x] mpc
-- [x] mpd
 - [x] xset
-- [x] urxvt (Awesome-wm is useless without this, just as a sysadmin is without a shell).
+- [x] urxvt (`emerge rxvt-unicode`)
 - [x] scrot
 - [x] dmenu
-- [x] Roboto
+- [x] Roboto (`emerge roboto`)
 - [x] i3lock
-- [x] ncmpcpp
+- [x] alsa-mixer (`emerge alsa-utils`)
 - [x] unclutter
-- [x] consolekit
-- [x] FontAwesome
+- [x] consolekit (`emerge consolekit`, `rc-update add consolekit default` and `rc-service consolekit start`)
+- [x] FontAwesome (`emerge fontawesome`)
 
 ## Features
 _Others_
@@ -28,7 +26,6 @@ _Widgets_
 | :--- | :--- |
 | RAM text                         | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                 |
 | CPU graph                        | [Personal creation based on Vicious](https://github.com/Mic92/vicious)                 |
-| MPD control                      | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
 | Currency text                    | Personal creation                                                                      |
 | Volume display                   | [Personal creation based on Pavel's work](http://pavelmakhov.com/awesome-wm-widgets/)  |
 | Download/Upload text             | [Copycat's Holo theme widget](https://github.com/lcpz/awesome-copycats)                |
