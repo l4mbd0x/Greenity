@@ -89,8 +89,6 @@ local arduino_editor  = "arduino"
 local arduino_editor2 = "vscode-bin"
 local http_client     = "postman"
 local database_client = "dbeaver"
-
---local android_dev    = "android-studio"
 local irc_client     = "urxvtc -e tmux new -s 0 irssi"
 --local remote_client  = "anydesk"
 --local remote_client2 = "teamviewer"
@@ -395,7 +393,6 @@ awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() en
 -- Widgets popups
 awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end),
 awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
-awful.key({ altkey, }, "m", function () if beautiful.currency_widget then beautiful.currency_widget.show(7) end end),
 
 -- I3lock lock screen
 -- Obs: requires `sudo chmod +r /etc/shadow` else i3lock won't read the password file
@@ -413,12 +410,15 @@ awful.key({ modkey, altkey }, "b", function () awful.spawn(browser) end),
 awful.key({ modkey, altkey }, "e", function () awful.spawn(email_client2) end),
 awful.key({ modkey, altkey }, "t", function () awful.spawn(torrent_client) end),
 awful.key({ modkey, altkey }, "h", function () awful.spawn(http_client) end),
+
 -- File management
 awful.key({ modkey, altkey }, "f", function () awful.util.spawn_with_shell(file_manager) end),
 awful.key({ modkey, altkey }, "d", function () awful.spawn(database_client) end),
+
 -- Image editing
 awful.key({ modkey, altkey }, "i", function () awful.spawn(image_editor) end),
 awful.key({ modkey, altkey }, "v", function () awful.spawn(vector_editor) end),
+
 -- File editing
 awful.key({ modkey, altkey }, "o", function () awful.spawn(office_editor) end),
 awful.key({ modkey, altkey }, "n", function () awful.spawn(online_editor) end),
@@ -427,31 +427,42 @@ awful.key({ modkey, altkey }, "p", function () awful.spawn(pdf_viewer) end),
 awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor) end),
 --awful.key({ modkey, altkey }, "l", function () awful.spawn(latex_editor2) end),
 awful.key({ modkey, altkey }, "m", function () awful.spawn(mindmap_editor) end),
-awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
+
+-- Programming
 awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(arduino_editor) end),
 awful.key({ modkey, altkey, leftshiftkey }, "b", function () awful.spawn(arduino_editor2) end),
+awful.key({ modkey, altkey, leftshiftkey }, "c", function () awful.util.spawn_with_shell(android_dev) end),
+
+-- Petri network editors
+awful.key({ modkey, altkey, leftcontrolkey }, "m", function () awful.spawn(petri_editor) end),
 awful.key({ modkey, altkey }, "u", function () awful.spawn(uml_editor) end),
+
 -- DVD/CD/BlueRay suite
 awful.key({ modkey, altkey }, "d", function () awful.spawn(dvd_suite) end),
+
 -- Social
 awful.key({ modkey, altkey }, "c", function () awful.spawn(chat_client) end),
+
 -- Gaming
 awful.key({ modkey, altkey }, "g", function () awful.util.spawn_with_shell(gaming_1) end),
---awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
-
+awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gaming_2) end),
 awful.key({ modkey, altkey, leftshiftkey }, "g", function () awful.util.spawn_with_shell(gamingChat) end),
+
 -- Streaming platform
 awful.key({ modkey, altkey }, "s", function () awful.spawn(stream_plat) end),
+
 -- Password manager
 awful.key({ modkey, altkey, leftshiftkey }, "p", function () awful.spawn(pass_manager2) end),
+
 -- Virtualization
 awful.key({ modkey, altkey, leftshiftkey }, "v", function () awful.spawn(virt_manager) end),
+
 -- Academic References
 awful.key({ modkey, altkey}, "a", function () awful.spawn(acad_ref_man) end),
--- Android development
-awful.key({ modkey, altkey, leftshiftkey }, "a", function () awful.spawn(android_dev) end),
+
 -- IRC Client
 awful.key({ modkey, altkey, leftshiftkey }, "i", function () awful.spawn(irc_client) end),
+
 -- Remote Access
 awful.key({ modkey, altkey}, "r", function () awful.spawn(remote_client) end),
 --awful.key({ modkey, altkey}, "r", function () awful.spawn(remote_client2) end),
